@@ -84,6 +84,30 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/CacheManager.h">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/ClientHandler.h">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/FileCacheManager.cpp">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/FileCacheManager.h">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/MySerialServer.cpp">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/MySerialServer.h">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/Server.h">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/Solver.h">
+			<Option target="mile_stone2"/>
+		</Unit>
 		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/main.cpp">
 			<Option target="mile_stone2"/>
 		</Unit>
