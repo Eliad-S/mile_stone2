@@ -7,7 +7,7 @@
 
 #include "Searchable.h"
 
-template<typename P, typename S>
+//template<typename P, typename S>
 //class Searcher : public Searchable<P, S> {
 //    MyPriorityQueue <State> openList;
 //    int evaluatedNodes;
