@@ -4,8 +4,14 @@
 
 #ifndef MILE_STONE2__MYTESTCLIENTHANDLER_H_
 #define MILE_STONE2__MYTESTCLIENTHANDLER_H_
-
-class MyTestClientHandler: public Server {
+#include "Solver.h"
+#include "Server.h"
+#include "CacheManager.h"
+using namespace server_side;
+class MyTestClientHandler: public ClientHandler {
+  Solver solver_;
+  CacheManager cm;
+  virtual void handleClient(ifstream& in, ofstream& out);
 
 };
 
