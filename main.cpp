@@ -1,6 +1,10 @@
 #include <iostream>
+#include "MySerialServer.h"
+#include "MyTestClientHandler.h"
 
 int main() {
-  std::cout << "Hello, Wovcxvxcvcxvxcrld!" << std::endl;
+  MySerialServer* s = new MySerialServer();
+  ClientHandler *c  = new MyTestClientHandler();
+  s->open(12345, c);
   return 0;
 }
