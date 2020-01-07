@@ -102,6 +102,12 @@
 		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/MySerialServer.h">
 			<Option target="mile_stone2"/>
 		</Unit>
+		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Searchable.h">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Searcher.h">
+			<Option target="mile_stone2"/>
+		</Unit>
 		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Server.h">
 			<Option target="mile_stone2"/>
 		</Unit>

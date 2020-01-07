@@ -5,13 +5,17 @@
 #ifndef MILE_STONE2_STRINGREVERSER_H
 #define MILE_STONE2_STRINGREVERSER_H
 
-
+#include <string>
+#include <algorithm>
 #include "Solver.h"
-template<typename P, typename S>
-class StringReverser : public Solver<P, S> {
+using namespace std;
+class StringReverser : public Solver<char *, const char *> {
 public:
-    virtual S solve(P problem) {
-
+    virtual const char* solve(char* problem) {
+        string p = (string) problem;
+        reverse(p.begin(), p.end());
+        const char *solution = p.c_str();
+        return solution;
     }
 };
 

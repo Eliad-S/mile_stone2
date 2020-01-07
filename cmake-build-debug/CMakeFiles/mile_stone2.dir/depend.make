@@ -4,12 +4,10 @@
 CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.o: ../FileCacheManager.cpp
 CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.o: ../FileCacheManager.h
 
-CMakeFiles/mile_stone2.dir/MySerialServer.cpp.o: ../ClientHandler.h
 CMakeFiles/mile_stone2.dir/MySerialServer.cpp.o: ../MySerialServer.cpp
-CMakeFiles/mile_stone2.dir/MySerialServer.cpp.o: ../MySerialServer.h
-CMakeFiles/mile_stone2.dir/MySerialServer.cpp.o: ../Server.h
 
 CMakeFiles/mile_stone2.dir/StringReverser.cpp.o: ../StringReverser.cpp
 
+CMakeFiles/mile_stone2.dir/main.cpp.o: ../Solver.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../main.cpp
 
