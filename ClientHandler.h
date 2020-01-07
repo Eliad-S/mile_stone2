@@ -6,7 +6,7 @@
 #define MILE_STONE2__CLIENTHANDLER_H_
 class ClientHandler{
  public:
-  virtual void handleClient(ifstream in, ofstream out) = 0;
+//  virtual void handleClient(ifstream in, ofstream out) = 0;
 
 };
 #endif //MILE_STONE2__CLIENTHANDLER_H_
