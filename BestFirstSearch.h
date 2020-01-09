@@ -31,7 +31,7 @@ public:
                     inClosed = true;
                 }
                 inOpen = this->inOpenList(state);
-                double possibleCost = n.getCost() + searchable.getWeightOfEdge(n, state);
+                double possibleCost = n.getTrialCost() + searchable.getWeightOfEdge(n, state);
                 if (!inOpen && !inClosed) {
                     state.setCameFrom(n);
                     state.setCost(possibleCost);
