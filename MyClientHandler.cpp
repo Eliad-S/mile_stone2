@@ -82,7 +82,7 @@ ISearchable<Point *> *MyClientHandler::createMatrix() {
         Point *p = new Point(i, j);
         State<Point *> *t = new State<Point *>(p, val);
         row.push_back(t);
-        vertexes[i] = row;
+        vertexes.push_back(row);
         j = 0;
         break;
       }
