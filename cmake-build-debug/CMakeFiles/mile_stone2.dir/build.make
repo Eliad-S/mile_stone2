@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/clion-2019.2.5/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/99/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /opt/clion-2019.2.5/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/99/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/eliadsellem/CLionProjects/mile_stone2
+CMAKE_SOURCE_DIR = /home/shirgold/CLionProjects/mile_stone2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug
+CMAKE_BINARY_DIR = /home/shirgold/CLionProjects/mile_stone2/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/mile_stone2.dir/depend.make
@@ -59,107 +59,107 @@ include CMakeFiles/mile_stone2.dir/flags.make
 
 CMakeFiles/mile_stone2.dir/main.cpp.o: CMakeFiles/mile_stone2.dir/flags.make
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/mile_stone2.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mile_stone2.dir/main.cpp.o -c /home/eliadsellem/CLionProjects/mile_stone2/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/mile_stone2.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mile_stone2.dir/main.cpp.o -c /home/shirgold/CLionProjects/mile_stone2/main.cpp
 
 CMakeFiles/mile_stone2.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mile_stone2.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eliadsellem/CLionProjects/mile_stone2/main.cpp > CMakeFiles/mile_stone2.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shirgold/CLionProjects/mile_stone2/main.cpp > CMakeFiles/mile_stone2.dir/main.cpp.i
 
 CMakeFiles/mile_stone2.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mile_stone2.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eliadsellem/CLionProjects/mile_stone2/main.cpp -o CMakeFiles/mile_stone2.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shirgold/CLionProjects/mile_stone2/main.cpp -o CMakeFiles/mile_stone2.dir/main.cpp.s
 
 CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.o: CMakeFiles/mile_stone2.dir/flags.make
 CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.o: ../FileCacheManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.o -c /home/eliadsellem/CLionProjects/mile_stone2/FileCacheManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.o -c /home/shirgold/CLionProjects/mile_stone2/FileCacheManager.cpp
 
 CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eliadsellem/CLionProjects/mile_stone2/FileCacheManager.cpp > CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shirgold/CLionProjects/mile_stone2/FileCacheManager.cpp > CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.i
 
 CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eliadsellem/CLionProjects/mile_stone2/FileCacheManager.cpp -o CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shirgold/CLionProjects/mile_stone2/FileCacheManager.cpp -o CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.s
 
 CMakeFiles/mile_stone2.dir/MySerialServer.cpp.o: CMakeFiles/mile_stone2.dir/flags.make
 CMakeFiles/mile_stone2.dir/MySerialServer.cpp.o: ../MySerialServer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/mile_stone2.dir/MySerialServer.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mile_stone2.dir/MySerialServer.cpp.o -c /home/eliadsellem/CLionProjects/mile_stone2/MySerialServer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/mile_stone2.dir/MySerialServer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mile_stone2.dir/MySerialServer.cpp.o -c /home/shirgold/CLionProjects/mile_stone2/MySerialServer.cpp
 
 CMakeFiles/mile_stone2.dir/MySerialServer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mile_stone2.dir/MySerialServer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eliadsellem/CLionProjects/mile_stone2/MySerialServer.cpp > CMakeFiles/mile_stone2.dir/MySerialServer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shirgold/CLionProjects/mile_stone2/MySerialServer.cpp > CMakeFiles/mile_stone2.dir/MySerialServer.cpp.i
 
 CMakeFiles/mile_stone2.dir/MySerialServer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mile_stone2.dir/MySerialServer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eliadsellem/CLionProjects/mile_stone2/MySerialServer.cpp -o CMakeFiles/mile_stone2.dir/MySerialServer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shirgold/CLionProjects/mile_stone2/MySerialServer.cpp -o CMakeFiles/mile_stone2.dir/MySerialServer.cpp.s
 
 CMakeFiles/mile_stone2.dir/StringReverser.cpp.o: CMakeFiles/mile_stone2.dir/flags.make
 CMakeFiles/mile_stone2.dir/StringReverser.cpp.o: ../StringReverser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/mile_stone2.dir/StringReverser.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mile_stone2.dir/StringReverser.cpp.o -c /home/eliadsellem/CLionProjects/mile_stone2/StringReverser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/mile_stone2.dir/StringReverser.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mile_stone2.dir/StringReverser.cpp.o -c /home/shirgold/CLionProjects/mile_stone2/StringReverser.cpp
 
 CMakeFiles/mile_stone2.dir/StringReverser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mile_stone2.dir/StringReverser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eliadsellem/CLionProjects/mile_stone2/StringReverser.cpp > CMakeFiles/mile_stone2.dir/StringReverser.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shirgold/CLionProjects/mile_stone2/StringReverser.cpp > CMakeFiles/mile_stone2.dir/StringReverser.cpp.i
 
 CMakeFiles/mile_stone2.dir/StringReverser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mile_stone2.dir/StringReverser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eliadsellem/CLionProjects/mile_stone2/StringReverser.cpp -o CMakeFiles/mile_stone2.dir/StringReverser.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shirgold/CLionProjects/mile_stone2/StringReverser.cpp -o CMakeFiles/mile_stone2.dir/StringReverser.cpp.s
 
 CMakeFiles/mile_stone2.dir/Graph.cpp.o: CMakeFiles/mile_stone2.dir/flags.make
 CMakeFiles/mile_stone2.dir/Graph.cpp.o: ../Graph.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/mile_stone2.dir/Graph.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mile_stone2.dir/Graph.cpp.o -c /home/eliadsellem/CLionProjects/mile_stone2/Graph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/mile_stone2.dir/Graph.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mile_stone2.dir/Graph.cpp.o -c /home/shirgold/CLionProjects/mile_stone2/Graph.cpp
 
 CMakeFiles/mile_stone2.dir/Graph.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mile_stone2.dir/Graph.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eliadsellem/CLionProjects/mile_stone2/Graph.cpp > CMakeFiles/mile_stone2.dir/Graph.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shirgold/CLionProjects/mile_stone2/Graph.cpp > CMakeFiles/mile_stone2.dir/Graph.cpp.i
 
 CMakeFiles/mile_stone2.dir/Graph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mile_stone2.dir/Graph.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eliadsellem/CLionProjects/mile_stone2/Graph.cpp -o CMakeFiles/mile_stone2.dir/Graph.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shirgold/CLionProjects/mile_stone2/Graph.cpp -o CMakeFiles/mile_stone2.dir/Graph.cpp.s
 
 CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o: CMakeFiles/mile_stone2.dir/flags.make
 CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o: ../MyClientHandler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o -c /home/eliadsellem/CLionProjects/mile_stone2/MyClientHandler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o -c /home/shirgold/CLionProjects/mile_stone2/MyClientHandler.cpp
 
 CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eliadsellem/CLionProjects/mile_stone2/MyClientHandler.cpp > CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shirgold/CLionProjects/mile_stone2/MyClientHandler.cpp > CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.i
 
 CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eliadsellem/CLionProjects/mile_stone2/MyClientHandler.cpp -o CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shirgold/CLionProjects/mile_stone2/MyClientHandler.cpp -o CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.s
 
 CMakeFiles/mile_stone2.dir/SolverSearch.cpp.o: CMakeFiles/mile_stone2.dir/flags.make
 CMakeFiles/mile_stone2.dir/SolverSearch.cpp.o: ../SolverSearch.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/mile_stone2.dir/SolverSearch.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mile_stone2.dir/SolverSearch.cpp.o -c /home/eliadsellem/CLionProjects/mile_stone2/SolverSearch.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/mile_stone2.dir/SolverSearch.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mile_stone2.dir/SolverSearch.cpp.o -c /home/shirgold/CLionProjects/mile_stone2/SolverSearch.cpp
 
 CMakeFiles/mile_stone2.dir/SolverSearch.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mile_stone2.dir/SolverSearch.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eliadsellem/CLionProjects/mile_stone2/SolverSearch.cpp > CMakeFiles/mile_stone2.dir/SolverSearch.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shirgold/CLionProjects/mile_stone2/SolverSearch.cpp > CMakeFiles/mile_stone2.dir/SolverSearch.cpp.i
 
 CMakeFiles/mile_stone2.dir/SolverSearch.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mile_stone2.dir/SolverSearch.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eliadsellem/CLionProjects/mile_stone2/SolverSearch.cpp -o CMakeFiles/mile_stone2.dir/SolverSearch.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shirgold/CLionProjects/mile_stone2/SolverSearch.cpp -o CMakeFiles/mile_stone2.dir/SolverSearch.cpp.s
 
 CMakeFiles/mile_stone2.dir/Point.cpp.o: CMakeFiles/mile_stone2.dir/flags.make
 CMakeFiles/mile_stone2.dir/Point.cpp.o: ../Point.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/mile_stone2.dir/Point.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mile_stone2.dir/Point.cpp.o -c /home/eliadsellem/CLionProjects/mile_stone2/Point.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/mile_stone2.dir/Point.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mile_stone2.dir/Point.cpp.o -c /home/shirgold/CLionProjects/mile_stone2/Point.cpp
 
 CMakeFiles/mile_stone2.dir/Point.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mile_stone2.dir/Point.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eliadsellem/CLionProjects/mile_stone2/Point.cpp > CMakeFiles/mile_stone2.dir/Point.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shirgold/CLionProjects/mile_stone2/Point.cpp > CMakeFiles/mile_stone2.dir/Point.cpp.i
 
 CMakeFiles/mile_stone2.dir/Point.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mile_stone2.dir/Point.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eliadsellem/CLionProjects/mile_stone2/Point.cpp -o CMakeFiles/mile_stone2.dir/Point.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shirgold/CLionProjects/mile_stone2/Point.cpp -o CMakeFiles/mile_stone2.dir/Point.cpp.s
 
 # Object files for target mile_stone2
 mile_stone2_OBJECTS = \
@@ -185,7 +185,7 @@ mile_stone2: CMakeFiles/mile_stone2.dir/SolverSearch.cpp.o
 mile_stone2: CMakeFiles/mile_stone2.dir/Point.cpp.o
 mile_stone2: CMakeFiles/mile_stone2.dir/build.make
 mile_stone2: CMakeFiles/mile_stone2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable mile_stone2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable mile_stone2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mile_stone2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -198,6 +198,6 @@ CMakeFiles/mile_stone2.dir/clean:
 .PHONY : CMakeFiles/mile_stone2.dir/clean
 
 CMakeFiles/mile_stone2.dir/depend:
-	cd /home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/eliadsellem/CLionProjects/mile_stone2 /home/eliadsellem/CLionProjects/mile_stone2 /home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug /home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug /home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles/mile_stone2.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/shirgold/CLionProjects/mile_stone2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/shirgold/CLionProjects/mile_stone2 /home/shirgold/CLionProjects/mile_stone2 /home/shirgold/CLionProjects/mile_stone2/cmake-build-debug /home/shirgold/CLionProjects/mile_stone2/cmake-build-debug /home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles/mile_stone2.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/mile_stone2.dir/depend
 

@@ -7,9 +7,9 @@
 
 #include "Searchable.h"
 #include "Point.h"
-class Matrix : public Searchable<Point> {
+class Matrix : public Searchable<Point*> {
   vector<vector<State<Point*>*>> vertexes;
-  virtual string print(State<Point*>* s) {
+  virtual string printOne(State<Point*>* s) {
     State<Point*>* father = s->getCameFrom();
     Point* fatherPoint = father->getT();
     Point* sonPoint = s->getT();

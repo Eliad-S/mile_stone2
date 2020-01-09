@@ -13,11 +13,14 @@ class Point {
     x = x_;
     y = y_;
   }
-  double getX() {
+  double getX()  {
     return x;
   }
-  double getY() {
+  double getY()  {
     return y;
+  }
+  bool operator==(Point &p) {
+      return (this->x == p.getX() && this->y == p.getY());
   }
 };
 

@@ -22,26 +22,31 @@ public:
         while (this->openList.size() > 0) {
             State<T> n = this->popOpenList();
             closed.insert(n);
-            if (n.equal(searchable.getGoalState())) {
+            if (n == searchable.getGoalState()) {
                 // return the solution
+                return searchable.printAll(n);
             }
             list<State<T>> successors = searchable.getAllPossibleState(n);
             for (State<T> state : successors) {
+                // check in closed
                 if (closed.find(state) != closed.end()) {
                     inClosed = true;
                 }
+                // check in open
                 inOpen = this->inOpenList(state);
-                double possibleCost = n.getTrialCost() + searchable.getWeightOfEdge(n, state);
+                double possibleTrialCost = n.getTrialCost() + searchable.getWeightOfEdge(n, state);
                 if (!inOpen && !inClosed) {
                     state.setCameFrom(n);
-                    state.setCost(possibleCost);
+                    state.setTrailCost(possibleTrialCost);
                     this->openList.push(state);
-                } else if (possibleCost < state.getCost()) {
+                } else if (possibleTrialCost < state.getCost()) {
+                    // the trial cost from n to state is better than the previous
                     state.setCameFrom(n);
-                    state.setCost(possibleCost);
+                    state.setTrailCost(possibleTrialCost);
                     if (!this->inOpenList(state)) {
                         this->addOpenList(state);
                     } else {
+                        // update in the priority queue
                         this->removeOpenList(state);
                         this->addOpenList(state);
                     }

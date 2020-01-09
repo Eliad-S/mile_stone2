@@ -17,7 +17,7 @@ class Searcher : public ISearcher<T, SOLUTION> {
     int evaluatedNodes;
 public:
     Searcher() {
-        openList = new priority_queue<State<T>>();
+        openList = new priority_queue<State<T>, vector<State<T>>, Compare<T>>();
         evaluatedNodes = 0;
     }
 
@@ -26,7 +26,6 @@ public:
     }
 
     virtual SOLUTION search(ISearchable<T> searchable) = 0;
-    //virtual SOLUTION findSolution(State<T>) = 0;
 
 protected:
     priority_queue<State<T>, vector<State<T>>, Compare<T>> openList;
@@ -41,7 +40,7 @@ protected:
     }
     bool inOpenList(State<T> state) {
         for (State<T> openState : this->openList) {
-            if (state.equal(openState)) {
+            if (state == openState) {
                 return true;
             }
         }
@@ -55,7 +54,7 @@ protected:
         // insert to vector all the state except of the "removeState"
         for (State<T> s : this->openList) {
             this->openList.pop();
-            if (!s.equal(removeState)) {
+            if (!(s == removeState)) {
                allStatesInOpen.push_back(s);
             }
         }
