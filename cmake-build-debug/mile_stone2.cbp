@@ -84,10 +84,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/BestFirstSearch.h">
+			<Option target="mile_stone2"/>
+		</Unit>
 		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/CacheManager.h">
 			<Option target="mile_stone2"/>
 		</Unit>
 		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/ClientHandler.h">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Compare.h">
 			<Option target="mile_stone2"/>
 		</Unit>
 		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/FileCacheManager.cpp">
@@ -96,16 +102,37 @@
 		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/FileCacheManager.h">
 			<Option target="mile_stone2"/>
 		</Unit>
+		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Graph.cpp">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Graph.h">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/ISearchable.h">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/ISearcher.h">
+			<Option target="mile_stone2"/>
+		</Unit>
 		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/MySerialServer.cpp">
 			<Option target="mile_stone2"/>
 		</Unit>
 		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/MySerialServer.h">
 			<Option target="mile_stone2"/>
 		</Unit>
+		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Searchable.h">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Searcher.h">
+			<Option target="mile_stone2"/>
+		</Unit>
 		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Server.h">
 			<Option target="mile_stone2"/>
 		</Unit>
 		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Solver.h">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/State.h">
 			<Option target="mile_stone2"/>
 		</Unit>
 		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/StringReverser.cpp">

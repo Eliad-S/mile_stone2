@@ -5,30 +5,63 @@
 #ifndef MILE_STONE2_SEARCHER_H
 #define MILE_STONE2_SEARCHER_H
 
-#include "Searchable.h"
+#include "Compare.h"
+#include "ISearcher.h"
+#include <queue>
 
-//template<typename P, typename S>
-//class Searcher : public Searchable<P, S> {
-//    MyPriorityQueue <State> openList;
-//    int evaluatedNodes;
-//public:
-//    Searcher() {
-//        openList = new MyPriorityQueue<State>();
-//        evaluatedNodes = 0;
-//    }
-//
-//    virtual int getNumberOfNodesEvaluated() {
-//        return evaluatedNodes;
-//    }
-//
-//    virtual Solution search(ISearchable searchable) = 0;
-//
-//protected:
-//    State popOpenList() {
-//        evaluatedNodes++;
-//        return openList.poll();
-//    }
-//
-//};
+using namespace std;
+
+// T - the type of the representation of the state of the Isearchable
+template<typename T, typename SOLUTION>
+class Searcher : public ISearcher<T, SOLUTION> {
+    int evaluatedNodes;
+public:
+    Searcher() {
+        openList = new priority_queue<State<T>>();
+        evaluatedNodes = 0;
+    }
+
+    int getNumberOfNodesEvaluated() {
+        return evaluatedNodes;
+    }
+
+    virtual SOLUTION search(ISearchable<T> searchable) = 0;
+
+protected:
+    priority_queue<State<T>, vector<State<T>>, Compare<T>> openList;
+    State<T> popOpenList() {
+        evaluatedNodes++;
+        if (openList.empty()) {
+            return nullptr;
+        }
+        auto top = openList.top();
+        openList.pop();
+        return top;
+    }
+    bool inOpenList(State<T> state) {
+        for (State<T> closedState : this->openList) {
+            if (state.equal(closedState)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    void addOpenList(State<T> state) {
+        this->openList.push(state);
+    }
+    void removeOpenList(State<T> removeState) {
+        vector<State<T>> allStatesInOpen;
+        // insert to vector all the state except of the "removeState"
+        for (State<T> s : this->openList) {
+            if (!s.equal(removeState)) {
+               allStatesInOpen.push_back(s);
+            }
+        }
+        // insert again to the priority queue
+        for (State<T> s : allStatesInOpen) {
+            this->openList.push(s);
+        }
+    }
+};
 
 #endif //MILE_STONE2_SEARCHER_H

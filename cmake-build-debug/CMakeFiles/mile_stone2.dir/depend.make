@@ -4,10 +4,22 @@
 CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.o: ../FileCacheManager.cpp
 CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.o: ../FileCacheManager.h
 
+CMakeFiles/mile_stone2.dir/Graph.cpp.o: ../Graph.cpp
+CMakeFiles/mile_stone2.dir/Graph.cpp.o: ../Graph.h
+CMakeFiles/mile_stone2.dir/Graph.cpp.o: ../ISearchable.h
+CMakeFiles/mile_stone2.dir/Graph.cpp.o: ../Searchable.h
+CMakeFiles/mile_stone2.dir/Graph.cpp.o: ../State.h
+
 CMakeFiles/mile_stone2.dir/MySerialServer.cpp.o: ../MySerialServer.cpp
 
 CMakeFiles/mile_stone2.dir/StringReverser.cpp.o: ../StringReverser.cpp
 
-CMakeFiles/mile_stone2.dir/main.cpp.o: ../Solver.h
+CMakeFiles/mile_stone2.dir/main.cpp.o: ../BestFirstSearch.h
+CMakeFiles/mile_stone2.dir/main.cpp.o: ../Compare.h
+CMakeFiles/mile_stone2.dir/main.cpp.o: ../ISearchable.h
+CMakeFiles/mile_stone2.dir/main.cpp.o: ../ISearcher.h
+CMakeFiles/mile_stone2.dir/main.cpp.o: ../Searchable.h
+CMakeFiles/mile_stone2.dir/main.cpp.o: ../Searcher.h
+CMakeFiles/mile_stone2.dir/main.cpp.o: ../State.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../main.cpp
 
