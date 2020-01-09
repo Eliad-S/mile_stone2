@@ -11,18 +11,20 @@ class State {
 private:
     T state;
     double cost;
+    double trailCost;
     State<T> cameFrom;
 public:
     State(T state1) {
         this->state = state1;
-        this->cost = numeric_limits<double>::infinity();
+        this->trailCost = numeric_limits<double>::infinity();
     }
     State(T state1, double c) {
+        this->trailCost = numeric_limits<double>::infinity();
         this->state = state1;
         this->cost = c;
     }
     bool equal(State<T> s) {
-        // check if they are equal
+        return this->state == s;
     }
     void setCameFrom(State<T> s) {
         this->cameFrom = s;
@@ -35,6 +37,12 @@ public:
     }
     State<T> getCameFrom() {
         return this->cameFrom;
+    }
+    void setTrailCost(double c) {
+        this->trailCost = c;
+    }
+    State<T> getTrialCost() {
+        return this->trailCost;
     }
 
 };
