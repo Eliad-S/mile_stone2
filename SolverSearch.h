@@ -9,13 +9,13 @@
 #include "Searcher.h"
 template<typename P, typename S,typename T>
 class SolverSearch: public Solver<P, S> {
-  Searcher<P, S>* searcher;
+  Searcher<T, S>* searcher;
  public:
   SolverSearch(Searcher<T, S>* s) {
     this->searcher = s;
   }
   virtual S solve(P problem) {
-    return this->searcher.search(problem);
+    return this->searcher->search(problem);
   }
 };
 

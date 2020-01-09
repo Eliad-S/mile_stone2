@@ -17,7 +17,6 @@ class Searcher : public ISearcher<T, SOLUTION> {
     int evaluatedNodes;
 public:
     Searcher() {
-        openList = new priority_queue<State<T>, vector<State<T>>, Compare<T>>();
         evaluatedNodes = 0;
     }
 
@@ -25,11 +24,11 @@ public:
         return evaluatedNodes;
     }
 
-    virtual SOLUTION search(ISearchable<T> searchable) = 0;
+    virtual SOLUTION search(ISearchable<T>* searchable) = 0;
 
 protected:
-    priority_queue<State<T>, vector<State<T>>, Compare<T>> openList;
-    State<T> popOpenList() {
+    priority_queue<State<T>*, vector<State<T>*>, Compare<T>> openList;
+    State<T>* popOpenList() {
         evaluatedNodes++;
         if (openList.empty()) {
             return nullptr;
@@ -38,28 +37,31 @@ protected:
         openList.pop();
         return top;
     }
-    bool inOpenList(State<T> state) {
-        for (State<T> openState : this->openList) {
-            if (state == openState) {
+    bool inOpenList(State<T>* state) {
+        while (!this->openList.empty()) {
+            State<T>* s = this->openList.top();
+            this->openList.pop();
+            if (s == state) {
                 return true;
             }
         }
         return false;
     }
-    void addOpenList(State<T> state) {
+    void addOpenList(State<T>* state) {
         this->openList.push(state);
     }
-    void removeOpenList(State<T> removeState) {
-        vector<State<T>> allStatesInOpen;
+    void removeOpenList(State<T>* removeState) {
+        vector<State<T>*> allStatesInOpen;
         // insert to vector all the state except of the "removeState"
-        for (State<T> s : this->openList) {
+        while (!this->openList.empty()) {
+            State<T>* s = this->openList.top();
             this->openList.pop();
             if (!(s == removeState)) {
                allStatesInOpen.push_back(s);
             }
         }
         // insert again to the priority queue
-        for (State<T> s : allStatesInOpen) {
+        for (State<T>* s : allStatesInOpen) {
             this->openList.push(s);
         }
     }

@@ -28,6 +28,14 @@ CMakeFiles/mile_stone2.dir/MySerialServer.cpp.o: ../MySerialServer.cpp
 CMakeFiles/mile_stone2.dir/MySerialServer.cpp.o: ../MySerialServer.h
 CMakeFiles/mile_stone2.dir/MySerialServer.cpp.o: ../Server.h
 
+CMakeFiles/mile_stone2.dir/MyTestClientHandler.cpp.o: ../CacheManager.h
+CMakeFiles/mile_stone2.dir/MyTestClientHandler.cpp.o: ../ClientHandler.h
+CMakeFiles/mile_stone2.dir/MyTestClientHandler.cpp.o: ../FileCacheManager.h
+CMakeFiles/mile_stone2.dir/MyTestClientHandler.cpp.o: ../MyTestClientHandler.cpp
+CMakeFiles/mile_stone2.dir/MyTestClientHandler.cpp.o: ../MyTestClientHandler.h
+CMakeFiles/mile_stone2.dir/MyTestClientHandler.cpp.o: ../Server.h
+CMakeFiles/mile_stone2.dir/MyTestClientHandler.cpp.o: ../Solver.h
+
 CMakeFiles/mile_stone2.dir/Point.cpp.o: ../Point.cpp
 CMakeFiles/mile_stone2.dir/Point.cpp.o: ../Point.h
 

@@ -129,6 +129,12 @@
 		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/MySerialServer.h">
 			<Option target="mile_stone2"/>
 		</Unit>
+		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/MyTestClientHandler.cpp">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/MyTestClientHandler.h">
+			<Option target="mile_stone2"/>
+		</Unit>
 		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Point.cpp">
 			<Option target="mile_stone2"/>
 		</Unit>

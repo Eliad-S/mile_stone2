@@ -34,7 +34,7 @@ public:
         return this->state == s;
     }
 
-    void setCameFrom(State<T> s) {
+    void setCameFrom(State<T>* s) {
         this->cameFrom = s;
     }
 

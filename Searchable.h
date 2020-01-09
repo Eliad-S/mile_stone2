@@ -45,13 +45,13 @@ public:
     virtual void setGoalState(State<T>* goal) {
         this->goalState = goal;
     }
-    virtual double getWeightOfEdge (State<T>* e1, State<T>* e2) {
-        auto edge = this->edges.find({e1, e2});
-        if (edge != this->edges.end()) {
-            return edge.second;
-        } else {
-            // error
-        }
-    }
+//    virtual double getWeightOfEdge (State<T>* e1, State<T>* e2) {
+//        auto edge = this->edges.find({e1, e2});
+//        if (edge != this->edges.end()) {
+//            return edge.second;
+//        } else {
+//            // error
+//        }
+//    }
 };
 #endif //MILE_STONE2_SEARCHABLE_H

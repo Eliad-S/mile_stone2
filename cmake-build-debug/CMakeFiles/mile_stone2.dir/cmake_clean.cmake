@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/mile_stone2.dir/Graph.cpp.o"
   "CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o"
   "CMakeFiles/mile_stone2.dir/MySerialServer.cpp.o"
+  "CMakeFiles/mile_stone2.dir/MyTestClientHandler.cpp.o"
   "CMakeFiles/mile_stone2.dir/Point.cpp.o"
   "CMakeFiles/mile_stone2.dir/SolverSearch.cpp.o"
   "CMakeFiles/mile_stone2.dir/StringReverser.cpp.o"

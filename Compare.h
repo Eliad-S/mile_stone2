@@ -8,7 +8,8 @@
 #include "State.h"
 template <class T>
 class Compare {
-    bool operator()(const State<T> *s1, const State<T> *s2) {
+public:
+    bool operator()( State<T> *s1, State<T> *s2) {
         return (s1->getCost() > s2->getCost());
     }
 

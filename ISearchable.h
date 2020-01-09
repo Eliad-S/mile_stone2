@@ -18,7 +18,7 @@ class ISearchable {
     virtual vector<State<T>*> getAllPossibleState(State<T>* s) = 0;
     virtual void setInitialState(State<T>* initial) = 0;
     virtual void setGoalState(State<T>* goal) = 0;
-    virtual double getWeightOfEdge (State<T>* e1, State<T>* e2) = 0;
+    //virtual double getWeightOfEdge (State<T>* e1, State<T>* e2) = 0;
     virtual string printAll(State<T>* goalState) = 0;
 };
 
