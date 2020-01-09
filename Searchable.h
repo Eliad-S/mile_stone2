@@ -40,6 +40,7 @@ public:
         return this->goalState;
     }
     virtual void setInitialState(State<T>* initial) {
+        initial->setTrailCost(0);
         this->initialState = initial;
     }
     virtual void setGoalState(State<T>* goal) {
