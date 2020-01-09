@@ -26,6 +26,7 @@ public:
     }
 
     virtual SOLUTION search(ISearchable<T> searchable) = 0;
+    //virtual SOLUTION findSolution(State<T>) = 0;
 
 protected:
     priority_queue<State<T>, vector<State<T>>, Compare<T>> openList;

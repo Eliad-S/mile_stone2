@@ -177,6 +177,33 @@ Graph.cpp.s:
 	$(MAKE) -f CMakeFiles/mile_stone2.dir/build.make CMakeFiles/mile_stone2.dir/Graph.cpp.s
 .PHONY : Graph.cpp.s
 
+MyClientHandler.o: MyClientHandler.cpp.o
+
+.PHONY : MyClientHandler.o
+
+# target to build an object file
+MyClientHandler.cpp.o:
+	$(MAKE) -f CMakeFiles/mile_stone2.dir/build.make CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o
+.PHONY : MyClientHandler.cpp.o
+
+MyClientHandler.i: MyClientHandler.cpp.i
+
+.PHONY : MyClientHandler.i
+
+# target to preprocess a source file
+MyClientHandler.cpp.i:
+	$(MAKE) -f CMakeFiles/mile_stone2.dir/build.make CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.i
+.PHONY : MyClientHandler.cpp.i
+
+MyClientHandler.s: MyClientHandler.cpp.s
+
+.PHONY : MyClientHandler.s
+
+# target to generate assembly for a file
+MyClientHandler.cpp.s:
+	$(MAKE) -f CMakeFiles/mile_stone2.dir/build.make CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.s
+.PHONY : MyClientHandler.cpp.s
+
 MySerialServer.o: MySerialServer.cpp.o
 
 .PHONY : MySerialServer.o
@@ -203,6 +230,60 @@ MySerialServer.s: MySerialServer.cpp.s
 MySerialServer.cpp.s:
 	$(MAKE) -f CMakeFiles/mile_stone2.dir/build.make CMakeFiles/mile_stone2.dir/MySerialServer.cpp.s
 .PHONY : MySerialServer.cpp.s
+
+Point.o: Point.cpp.o
+
+.PHONY : Point.o
+
+# target to build an object file
+Point.cpp.o:
+	$(MAKE) -f CMakeFiles/mile_stone2.dir/build.make CMakeFiles/mile_stone2.dir/Point.cpp.o
+.PHONY : Point.cpp.o
+
+Point.i: Point.cpp.i
+
+.PHONY : Point.i
+
+# target to preprocess a source file
+Point.cpp.i:
+	$(MAKE) -f CMakeFiles/mile_stone2.dir/build.make CMakeFiles/mile_stone2.dir/Point.cpp.i
+.PHONY : Point.cpp.i
+
+Point.s: Point.cpp.s
+
+.PHONY : Point.s
+
+# target to generate assembly for a file
+Point.cpp.s:
+	$(MAKE) -f CMakeFiles/mile_stone2.dir/build.make CMakeFiles/mile_stone2.dir/Point.cpp.s
+.PHONY : Point.cpp.s
+
+SolverSearch.o: SolverSearch.cpp.o
+
+.PHONY : SolverSearch.o
+
+# target to build an object file
+SolverSearch.cpp.o:
+	$(MAKE) -f CMakeFiles/mile_stone2.dir/build.make CMakeFiles/mile_stone2.dir/SolverSearch.cpp.o
+.PHONY : SolverSearch.cpp.o
+
+SolverSearch.i: SolverSearch.cpp.i
+
+.PHONY : SolverSearch.i
+
+# target to preprocess a source file
+SolverSearch.cpp.i:
+	$(MAKE) -f CMakeFiles/mile_stone2.dir/build.make CMakeFiles/mile_stone2.dir/SolverSearch.cpp.i
+.PHONY : SolverSearch.cpp.i
+
+SolverSearch.s: SolverSearch.cpp.s
+
+.PHONY : SolverSearch.s
+
+# target to generate assembly for a file
+SolverSearch.cpp.s:
+	$(MAKE) -f CMakeFiles/mile_stone2.dir/build.make CMakeFiles/mile_stone2.dir/SolverSearch.cpp.s
+.PHONY : SolverSearch.cpp.s
 
 StringReverser.o: StringReverser.cpp.o
 
@@ -273,9 +354,18 @@ help:
 	@echo "... Graph.o"
 	@echo "... Graph.i"
 	@echo "... Graph.s"
+	@echo "... MyClientHandler.o"
+	@echo "... MyClientHandler.i"
+	@echo "... MyClientHandler.s"
 	@echo "... MySerialServer.o"
 	@echo "... MySerialServer.i"
 	@echo "... MySerialServer.s"
+	@echo "... Point.o"
+	@echo "... Point.i"
+	@echo "... Point.s"
+	@echo "... SolverSearch.o"
+	@echo "... SolverSearch.i"
+	@echo "... SolverSearch.s"
 	@echo "... StringReverser.o"
 	@echo "... StringReverser.i"
 	@echo "... StringReverser.s"

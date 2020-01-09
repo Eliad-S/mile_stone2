@@ -12,8 +12,8 @@ class Searchable : public ISearchable<T> {
 protected:
     State<T> *goalState;
     State<T> *initialState;
-    vector<State<T> *> vertexes;
     unordered_map<pair<State<T>, State<T>>, double> edges;
+    virtual string print(State<T> s) =0;
 public:
     Searchable() {}
     virtual State<T> getInitialState() {

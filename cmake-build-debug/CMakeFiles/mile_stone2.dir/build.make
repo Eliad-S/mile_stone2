@@ -122,13 +122,55 @@ CMakeFiles/mile_stone2.dir/Graph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mile_stone2.dir/Graph.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eliadsellem/CLionProjects/mile_stone2/Graph.cpp -o CMakeFiles/mile_stone2.dir/Graph.cpp.s
 
+CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o: CMakeFiles/mile_stone2.dir/flags.make
+CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o: ../MyClientHandler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o -c /home/eliadsellem/CLionProjects/mile_stone2/MyClientHandler.cpp
+
+CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eliadsellem/CLionProjects/mile_stone2/MyClientHandler.cpp > CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.i
+
+CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eliadsellem/CLionProjects/mile_stone2/MyClientHandler.cpp -o CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.s
+
+CMakeFiles/mile_stone2.dir/SolverSearch.cpp.o: CMakeFiles/mile_stone2.dir/flags.make
+CMakeFiles/mile_stone2.dir/SolverSearch.cpp.o: ../SolverSearch.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/mile_stone2.dir/SolverSearch.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mile_stone2.dir/SolverSearch.cpp.o -c /home/eliadsellem/CLionProjects/mile_stone2/SolverSearch.cpp
+
+CMakeFiles/mile_stone2.dir/SolverSearch.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mile_stone2.dir/SolverSearch.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eliadsellem/CLionProjects/mile_stone2/SolverSearch.cpp > CMakeFiles/mile_stone2.dir/SolverSearch.cpp.i
+
+CMakeFiles/mile_stone2.dir/SolverSearch.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mile_stone2.dir/SolverSearch.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eliadsellem/CLionProjects/mile_stone2/SolverSearch.cpp -o CMakeFiles/mile_stone2.dir/SolverSearch.cpp.s
+
+CMakeFiles/mile_stone2.dir/Point.cpp.o: CMakeFiles/mile_stone2.dir/flags.make
+CMakeFiles/mile_stone2.dir/Point.cpp.o: ../Point.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/mile_stone2.dir/Point.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mile_stone2.dir/Point.cpp.o -c /home/eliadsellem/CLionProjects/mile_stone2/Point.cpp
+
+CMakeFiles/mile_stone2.dir/Point.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mile_stone2.dir/Point.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eliadsellem/CLionProjects/mile_stone2/Point.cpp > CMakeFiles/mile_stone2.dir/Point.cpp.i
+
+CMakeFiles/mile_stone2.dir/Point.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mile_stone2.dir/Point.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eliadsellem/CLionProjects/mile_stone2/Point.cpp -o CMakeFiles/mile_stone2.dir/Point.cpp.s
+
 # Object files for target mile_stone2
 mile_stone2_OBJECTS = \
 "CMakeFiles/mile_stone2.dir/main.cpp.o" \
 "CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.o" \
 "CMakeFiles/mile_stone2.dir/MySerialServer.cpp.o" \
 "CMakeFiles/mile_stone2.dir/StringReverser.cpp.o" \
-"CMakeFiles/mile_stone2.dir/Graph.cpp.o"
+"CMakeFiles/mile_stone2.dir/Graph.cpp.o" \
+"CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o" \
+"CMakeFiles/mile_stone2.dir/SolverSearch.cpp.o" \
+"CMakeFiles/mile_stone2.dir/Point.cpp.o"
 
 # External object files for target mile_stone2
 mile_stone2_EXTERNAL_OBJECTS =
@@ -138,9 +180,12 @@ mile_stone2: CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.o
 mile_stone2: CMakeFiles/mile_stone2.dir/MySerialServer.cpp.o
 mile_stone2: CMakeFiles/mile_stone2.dir/StringReverser.cpp.o
 mile_stone2: CMakeFiles/mile_stone2.dir/Graph.cpp.o
+mile_stone2: CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o
+mile_stone2: CMakeFiles/mile_stone2.dir/SolverSearch.cpp.o
+mile_stone2: CMakeFiles/mile_stone2.dir/Point.cpp.o
 mile_stone2: CMakeFiles/mile_stone2.dir/build.make
 mile_stone2: CMakeFiles/mile_stone2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable mile_stone2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable mile_stone2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mile_stone2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

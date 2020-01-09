@@ -114,10 +114,25 @@
 		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/ISearcher.h">
 			<Option target="mile_stone2"/>
 		</Unit>
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/Matrix.h">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/MyClientHandler.cpp">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/MyClientHandler.h">
+			<Option target="mile_stone2"/>
+		</Unit>
 		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/MySerialServer.cpp">
 			<Option target="mile_stone2"/>
 		</Unit>
 		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/MySerialServer.h">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/Point.cpp">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/Point.h">
 			<Option target="mile_stone2"/>
 		</Unit>
 		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/Searchable.h">
@@ -130,6 +145,12 @@
 			<Option target="mile_stone2"/>
 		</Unit>
 		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/Solver.h">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/SolverSearch.cpp">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/SolverSearch.h">
 			<Option target="mile_stone2"/>
 		</Unit>
 		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/State.h">

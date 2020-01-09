@@ -3,6 +3,7 @@
 //
 #include <string>
 #include <limits>
+#include "Point.h"
 using namespace std;
 #ifndef MILE_STONE2_STATE_H
 #define MILE_STONE2_STATE_H
@@ -12,7 +13,7 @@ private:
     T state;
     double cost;
     double trailCost;
-    State<T> cameFrom;
+    State<T>* cameFrom;
 public:
     State(T state1) {
         this->state = state1;
@@ -35,15 +36,18 @@ public:
     double getCost() {
         return this->cost;
     }
-    State<T> getCameFrom() {
+    State<T>* getCameFrom() {
         return this->cameFrom;
     }
     void setTrailCost(double c) {
         this->trailCost = c;
     }
-    State<T> getTrialCost() {
+  double getTrialCost() {
         return this->trailCost;
     }
 
+  T getT(){
+    return this->state;
+    }
 };
 #endif //MILE_STONE2_STATE_H
