@@ -8,22 +8,13 @@
 #include <string>
 #include <algorithm>
 #include "Solver.h"
-
 using namespace std;
-
-class StringReverser : public Solver<char *, char *> {
+class StringReverser : public Solver<string,string> {
 public:
-    virtual char *solve(char *problem) {
-        string reverseP = (string) problem;
-        reverse(reverseP.begin(), reverseP.end());
-        char c[reverseP.length()];
-        int i = 0;
-        for (char a : reverseP) {
-            c[i] = a;
-            i++;
-        }
-        char *solution = c;
-        return c;
+    virtual string solve(string problem) {
+        reverse(problem.begin(), problem.end());
+        string solution = problem.c_str();
+        return solution;
     }
 };
 

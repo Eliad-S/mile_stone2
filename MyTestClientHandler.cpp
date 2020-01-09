@@ -1,17 +1,42 @@
 //
 // Created by eliadsellem on 1/6/20.
 //
+#include <unistd.h>
+#include <sys/socket.h>
 #include "MyTestClientHandler.h"
-void MyTestClientHandler:: handleClient(ifstream& in, ofstream& out){
+void MyTestClientHandler:: handleClient(int server_socket){
+  while(true) {
+    char buffer[1500] = {0};
+    //receive massage
+    int valRead = read(server_socket, buffer, 1500);
+    if(valRead == 0) {
+      break;
+    }
+    string problem = string(buffer);
+    problem = problem.substr(0, valRead);
 
-  out<<"hello its a massage from the input file\n";
-  in.seekg(0, in.end);
-  int length = in.tellg();
-  in.seekg(0, in.beg);
+    if (problem.compare("End") == 0) {
+      cout << "endddd" << endl;
+      close(server_socket);
+      break;
+    }
+    //write the massage into file
+    cout << "buffer : " << buffer << endl;
+    string solution;
+    if(file_cache->isSolved(problem)) {
+      solution = file_cache->getSolution(problem);
+      cout<<"from file: "<<solution<<endl;
+    }else {
+      solution = solver->solve(problem);
+      file_cache->saveSolution(problem,solution);
+    }
 
-  char *buffer = new char[length];
-  in.read(buffer, length);
-
-  out<<buffer;
-
+    cout<<"solution : "<<solution<<endl;
+    char *bufferOut = &solution[0];
+    int is_send = send(server_socket, bufferOut, solution.length(), 0);
+    if (is_send == -1) {
+      cerr << "error sending massage to client" << endl;
+    }
+    cout << "bufferOut : " << bufferOut << endl;
+  }
 }

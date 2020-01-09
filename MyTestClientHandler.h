@@ -6,13 +6,18 @@
 #define MILE_STONE2__MYTESTCLIENTHANDLER_H_
 #include "Solver.h"
 #include "Server.h"
-#include "CacheManager.h"
+#include "FileCacheManager.h"
+#include <iostream>
 using namespace server_side;
 class MyTestClientHandler: public ClientHandler {
-  Solver solver_;
-  CacheManager cm;
-  virtual void handleClient(ifstream& in, ofstream& out);
-
+  Solver<string,string> *solver;
+  CacheManager<string, string> *file_cache;
+  virtual void handleClient(int server_socket);
+ public:
+  MyTestClientHandler(Solver<string,string> *solver_,CacheManager<string,string>* cache) {
+    this->solver = solver_;
+    this->file_cache = cache;
+  }
 };
 
 #endif //MILE_STONE2__MYTESTCLIENTHANDLER_H_
