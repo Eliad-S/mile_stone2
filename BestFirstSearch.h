@@ -8,8 +8,10 @@
 #include "Searcher.h"
 #include "Compare.h"
 #include <bits/stdc++.h>
+
 using namespace std;
-template <class T, class SOLUTION>
+
+template<class T, class SOLUTION>
 class BestFirstSearch : public Searcher<T, SOLUTION> {
 public:
     // Searcher's abstract method overriding
@@ -25,10 +27,8 @@ public:
             }
             list<State<T>> successors = searchable.getAllPossibleState(n);
             for (State<T> state : successors) {
-                for (State<T> closedState : closed) {
-                    if (state.equal(closedState)) {
-                        inClosed = true;
-                    }
+                if (closed.find(state) != closed.end()) {
+                    inClosed = true;
                 }
                 inOpen = this->inOpenList(state);
                 double possibleCost = n.getCost() + searchable.getWeightOfEdge(n, state);
@@ -46,6 +46,7 @@ public:
                         this->addOpenList(state);
                     }
                 }
+                inClosed = false;
             }
         }
     }

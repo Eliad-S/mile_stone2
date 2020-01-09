@@ -39,8 +39,8 @@ protected:
         return top;
     }
     bool inOpenList(State<T> state) {
-        for (State<T> closedState : this->openList) {
-            if (state.equal(closedState)) {
+        for (State<T> openState : this->openList) {
+            if (state.equal(openState)) {
                 return true;
             }
         }
@@ -53,6 +53,7 @@ protected:
         vector<State<T>> allStatesInOpen;
         // insert to vector all the state except of the "removeState"
         for (State<T> s : this->openList) {
+            this->openList.pop();
             if (!s.equal(removeState)) {
                allStatesInOpen.push_back(s);
             }
