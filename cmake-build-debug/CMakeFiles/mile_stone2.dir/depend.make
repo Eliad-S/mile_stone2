@@ -15,9 +15,11 @@ CMakeFiles/mile_stone2.dir/Graph.cpp.o: ../State.h
 CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o: ../CacheManager.h
 CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o: ../ClientHandler.h
 CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o: ../ISearchable.h
+CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o: ../Matrix.h
 CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o: ../MyClientHandler.cpp
 CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o: ../MyClientHandler.h
 CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o: ../Point.h
+CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o: ../Searchable.h
 CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o: ../Solver.h
 CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o: ../State.h
 

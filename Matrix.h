@@ -7,8 +7,13 @@
 
 #include "Searchable.h"
 #include "Point.h"
-class Matrix : public Searchable<Point*> {
+class Matrix : public Searchable<Point> {
   vector<vector<State<Point*>*>> vertexes;
+
+ public:
+  Matrix(vector<vector<State<Point*>*>>& v) {
+    vertexes = v;
+  }
   virtual string printOne(State<Point*>* s) {
     State<Point*>* father = s->getCameFrom();
     Point* fatherPoint = father->getT();
@@ -25,7 +30,10 @@ class Matrix : public Searchable<Point*> {
     if(fatherPoint->getY() < sonPoint->getY()) {
       return "RIGHT (" + to_string(s->getTrialCost()) + "), ";
     }
+    return "not good";
+  }
 
+  virtual list<State<Point*>> getAllPossibleState(State<Point*> s) {
 
   }
 
