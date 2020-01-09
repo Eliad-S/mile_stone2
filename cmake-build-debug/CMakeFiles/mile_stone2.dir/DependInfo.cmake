@@ -4,15 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/shirgold/CLionProjects/mile_stone2/FileCacheManager.cpp" "/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.o"
-  "/home/shirgold/CLionProjects/mile_stone2/Graph.cpp" "/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles/mile_stone2.dir/Graph.cpp.o"
-  "/home/shirgold/CLionProjects/mile_stone2/MyClientHandler.cpp" "/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o"
-  "/home/shirgold/CLionProjects/mile_stone2/MySerialServer.cpp" "/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles/mile_stone2.dir/MySerialServer.cpp.o"
-  "/home/shirgold/CLionProjects/mile_stone2/MyTestClientHandler.cpp" "/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles/mile_stone2.dir/MyTestClientHandler.cpp.o"
-  "/home/shirgold/CLionProjects/mile_stone2/Point.cpp" "/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles/mile_stone2.dir/Point.cpp.o"
-  "/home/shirgold/CLionProjects/mile_stone2/SolverSearch.cpp" "/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles/mile_stone2.dir/SolverSearch.cpp.o"
-  "/home/shirgold/CLionProjects/mile_stone2/StringReverser.cpp" "/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles/mile_stone2.dir/StringReverser.cpp.o"
-  "/home/shirgold/CLionProjects/mile_stone2/main.cpp" "/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles/mile_stone2.dir/main.cpp.o"
+  "/home/eliadsellem/CLionProjects/mile_stone2/FileCacheManager.cpp" "/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.o"
+  "/home/eliadsellem/CLionProjects/mile_stone2/Graph.cpp" "/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles/mile_stone2.dir/Graph.cpp.o"
+  "/home/eliadsellem/CLionProjects/mile_stone2/MyClientHandler.cpp" "/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o"
+  "/home/eliadsellem/CLionProjects/mile_stone2/MySerialServer.cpp" "/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles/mile_stone2.dir/MySerialServer.cpp.o"
+  "/home/eliadsellem/CLionProjects/mile_stone2/MyTestClientHandler.cpp" "/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles/mile_stone2.dir/MyTestClientHandler.cpp.o"
+  "/home/eliadsellem/CLionProjects/mile_stone2/Point.cpp" "/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles/mile_stone2.dir/Point.cpp.o"
+  "/home/eliadsellem/CLionProjects/mile_stone2/SolverSearch.cpp" "/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles/mile_stone2.dir/SolverSearch.cpp.o"
+  "/home/eliadsellem/CLionProjects/mile_stone2/StringReverser.cpp" "/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles/mile_stone2.dir/StringReverser.cpp.o"
+  "/home/eliadsellem/CLionProjects/mile_stone2/main.cpp" "/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/CMakeFiles/mile_stone2.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

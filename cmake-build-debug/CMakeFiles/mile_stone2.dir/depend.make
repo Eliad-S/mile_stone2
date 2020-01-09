@@ -60,6 +60,7 @@ CMakeFiles/mile_stone2.dir/main.cpp.o: ../Compare.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../FileCacheManager.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../ISearchable.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../ISearcher.h
+CMakeFiles/mile_stone2.dir/main.cpp.o: ../MyClientHandler.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../MySerialServer.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../MyTestClientHandler.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../Point.h

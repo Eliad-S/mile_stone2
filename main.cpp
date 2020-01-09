@@ -6,6 +6,7 @@
 #include "ISearchable.h"
 #include "SolverSearch.h"
 #include "BestFirstSearch.h"
+#include "MyClientHandler.h"
 
 int main() {
   MySerialServer* s = new MySerialServer();
@@ -13,8 +14,8 @@ int main() {
   Solver<string,string>* solver = new StringReverser();
   Searcher<Point*,string> * bfs = new BestFirstSearch<Point*,string>();
   Solver<ISearchable<Point*>*,string> *solverS = new SolverSearch<ISearchable<Point*>*,string,Point*>(bfs);
-  ClientHandler *c  = new MyTestClientHandler(solver,fileCache);
-  s->open(12345, c);
+  ClientHandler *c  = new MyClientHandler(solverS,fileCache);
+  s->open(12346, c);
 
 
   delete fileCache;
