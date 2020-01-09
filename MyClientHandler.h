@@ -14,10 +14,10 @@
 using namespace std;
 class MyClientHandler : public ClientHandler{
   vector<string> allProblem;
-  Solver<ISearchable<Point>*,string> *solver;
+  Solver<ISearchable<Point*>*,string> *solver;
   CacheManager<string, string> *file_cache;
   virtual void handleClient(int socket) = 0;
-  ISearchable<Point>* createMatrix();
+  ISearchable<Point*>* createMatrix();
   void split( string s, double *p_int, double *p_int_1);
   string clearSpaces(string s);
 };

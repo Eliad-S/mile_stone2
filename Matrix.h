@@ -7,7 +7,7 @@
 
 #include "Searchable.h"
 #include "Point.h"
-class Matrix : public Searchable<Point> {
+class Matrix : public Searchable<Point*> {
   vector<vector<State<Point*>*>> vertexes;
 
  public:
@@ -32,9 +32,23 @@ class Matrix : public Searchable<Point> {
     }
     return "not good";
   }
-
-  virtual list<State<Point*>> getAllPossibleState(State<Point*> s) {
-
+  virtual vector<State<Point*>*> getAllPossibleState(State<Point*>* s) {
+    int size = this->vertexes.front().size() - 1;
+    vector<State<Point*>*> sons;
+    Point* p = s->getT();
+    if (p->getX() != 0) {
+      sons.push_back(vertexes[p->getX() - 1][p->getY()]);
+    }
+    if (p->getX() != size) {
+      sons.push_back(vertexes[p->getX() + 1][p->getY()]);
+    }
+    if (p->getY() != 0) {
+      sons.push_back(vertexes[p->getX()][p->getY() - 1]);
+    }
+    if (p->getY() != size) {
+      sons.push_back(vertexes[p->getX()][p->getY() + 1]);
+    }
+    return sons;
   }
 
 };

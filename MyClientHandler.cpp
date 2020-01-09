@@ -29,7 +29,7 @@ void MyClientHandler::handleClient(int server_socket) {
         cout << "from file: " << solution << endl;
       } else {
         //create matrix
-        ISearchable<Point> *matrix = createMatrix();
+        ISearchable<Point*> *matrix = createMatrix();
         solution = solver->solve(matrix);
         file_cache->saveSolution(problem, solution);
       }
@@ -49,7 +49,7 @@ void MyClientHandler::handleClient(int server_socket) {
   }
 }
 
-ISearchable<Point> *MyClientHandler::createMatrix() {
+ISearchable<Point*>* MyClientHandler::createMatrix() {
   vector<vector<State<Point *> *>> vertexes;
   int size = allProblem.size();
   string line;
@@ -89,6 +89,9 @@ ISearchable<Point> *MyClientHandler::createMatrix() {
   State<Point *> *goal = new State<Point *>(p2);
 
   ISearchable<Point*>* matrix = new Matrix(vertexes);
+  matrix->setInitialState(initial);
+  matrix->setGoalState(goal);
+  return matrix;
 
 }
 

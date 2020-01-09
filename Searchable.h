@@ -33,20 +33,19 @@ protected:
     }
 public:
     Searchable() {}
-    virtual State<T> getInitialState() {
+    virtual State<T>* getInitialState() {
         return this->initialState;
     }
-    virtual State<T> getGoalState() {
+    virtual State<T>* getGoalState() {
         return this->goalState;
     }
-    virtual list<State<T>> getAllPossibleState(State<T> s) = 0;
-    virtual void setInitialState(State<T> initial) {
+    virtual void setInitialState(State<T>* initial) {
         this->initialState = initial;
     }
-    virtual void setGoalState(State<T> goal) {
+    virtual void setGoalState(State<T>* goal) {
         this->goalState = goal;
     }
-    virtual double getWeightOfEdge (State<T> e1, State<T> e2) {
+    virtual double getWeightOfEdge (State<T>* e1, State<T>* e2) {
         auto edge = this->edges.find({e1, e2});
         if (edge != this->edges.end()) {
             return edge.second;

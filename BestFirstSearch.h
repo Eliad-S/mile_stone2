@@ -26,7 +26,7 @@ public:
                 // return the solution
                 return searchable.printAll(n);
             }
-            list<State<T>> successors = searchable.getAllPossibleState(n);
+            vector<State<T>> successors = searchable.getAllPossibleState(n);
             for (State<T> state : successors) {
                 // check in closed
                 if (closed.find(state) != closed.end()) {
