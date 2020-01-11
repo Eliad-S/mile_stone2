@@ -16,6 +16,7 @@ template<typename T, typename SOLUTION>
 class Searcher : public ISearcher<T, SOLUTION> {
     int evaluatedNodes;
 public:
+    // constructor
     Searcher() {
         evaluatedNodes = 0;
     }
@@ -27,7 +28,11 @@ public:
     virtual SOLUTION search(ISearchable<T>* searchable) = 0;
 
 protected:
-    priority_queue<State<T>*, vector<State<T>*>, Compare<T>> openList;
+    priority_queue<State<T> *, vector<State<T> *>, Compare<T>> openList;
+    /*
+     * the function pop from the queue the state with the greatest priority
+     * and updates the evaluated Nodes.
+     */
     State<T>* popOpenList() {
         evaluatedNodes++;
         if (openList.empty()) {
@@ -37,19 +42,35 @@ protected:
         openList.pop();
         return top;
     }
+    /*
+     * the function checks if the state is in the OpenList (queue)
+     */
     bool inOpenList(State<T>* state) {
+        bool inOpen = false;
+        vector<State<T>*> allStatesInOpen;
         while (!this->openList.empty()) {
             State<T>* s = this->openList.top();
             this->openList.pop();
             if (s == state) {
-                return true;
+                inOpen = true;
             }
+            allStatesInOpen.push_back(s);
         }
-        return false;
+        // insert again to the priority queue
+        for (State<T>* s : allStatesInOpen) {
+            this->openList.push(s);
+        }
+        return inOpen;
     }
+    /*
+     * the function inserts the state to the OpenList (queue)
+     */
     void addOpenList(State<T>* state) {
         this->openList.push(state);
     }
+    /*
+     * the function removes the state from the OpenList (queue)
+     */
     void removeOpenList(State<T>* removeState) {
         vector<State<T>*> allStatesInOpen;
         // insert to vector all the state except of the "removeState"

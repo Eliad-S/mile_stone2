@@ -19,6 +19,7 @@ public:
         bool inClosed = false, inOpen;
         this->addOpenList(searchable->getInitialState());
         unordered_set<State<T>*> closed;
+        // while the priority queue is not empty
         while (this->openList.size() > 0) {
             State<T>* n = this->popOpenList();
             closed.insert(n);
@@ -38,7 +39,7 @@ public:
                 if (!inOpen && !inClosed) {
                     state->setCameFrom(n);
                     state->setTrailCost(possibleTrialCost);
-                    this->openList.push(state);
+                    this->addOpenList(state);
                 } else if (possibleTrialCost < state->getCost()) {
                     // the trial cost from n to state is better than the previous
                     state->setCameFrom(n);
@@ -56,6 +57,4 @@ public:
         }
     }
 };
-
-
 #endif //MILE_STONE2_BESTFIRSTSEARCH_H

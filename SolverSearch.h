@@ -7,16 +7,21 @@
 
 #include "Solver.h"
 #include "Searcher.h"
-template<typename P, typename S,typename T>
-class SolverSearch: public Solver<P, S> {
-  Searcher<T, S>* searcher;
- public:
-  SolverSearch(Searcher<T, S>* s) {
-    this->searcher = s;
-  }
-  virtual S solve(P problem) {
-    return this->searcher->search(problem);
-  }
+
+template<typename P, typename S, typename T>
+class SolverSearch : public Solver<P, S> {
+    Searcher<T, S> *searcher;
+public:
+    // constructor
+    SolverSearch(Searcher<T, S> *s) {
+        this->searcher = s;
+    }
+    /*
+     * solve the problem by the search algorithm
+     */
+    virtual S solve(P problem) {
+        return this->searcher->search(problem);
+    }
 };
 
 #endif //MILE_STONE2__SOLVERSEARCH_H_

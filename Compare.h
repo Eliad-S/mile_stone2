@@ -9,8 +9,9 @@
 template <class T>
 class Compare {
 public:
-    bool operator()( State<T> *s1, State<T> *s2) {
-        return (s1->getCost() > s2->getCost());
+    // compare two states according to the trial cost
+    bool operator()(State<T> *s1, State<T> *s2) {
+        return (s1->getTrialCost() > s2->getTrialCost());
     }
 
 };

@@ -14,10 +14,15 @@ protected:
     State<T> *initialState;
     //unordered_map<pair<State<T>, State<T>>, double> edges;
     virtual string printOne(State<Point*>* s) = 0;
+    /*
+     * the function returns the solution of the algorithm:
+     * calculates the steps from the initial state to the goal state
+     */
     string printAll(State<T>* goalState) {
         vector<string> steps;
         State<T>* son = goalState;
         State<T>* father = son->getCameFrom();
+        // while we don't arrive to the initial state
         while (father != nullptr) {
             string s = this->printOne(son);
             steps.push_back(s);
@@ -25,14 +30,15 @@ protected:
             father = son->getCameFrom();
         }
         string solution = "";
+        // save in solution all the steps
         for (string s : steps) {
             solution = s + solution;
         }
         return solution;
-
     }
 public:
     Searchable() {}
+    // getters and setters
     virtual State<T>* getInitialState() {
         return this->initialState;
     }
@@ -40,7 +46,7 @@ public:
         return this->goalState;
     }
     virtual void setInitialState(State<T>* initial) {
-        initial->setTrailCost(0);
+        initial->setTrailCost(initial->getCost());
         this->initialState = initial;
     }
     virtual void setGoalState(State<T>* goal) {

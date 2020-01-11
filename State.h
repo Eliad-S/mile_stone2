@@ -12,28 +12,30 @@ using namespace std;
 template<class T>
 class State {
 private:
-    T state;
-    double cost;
-    double trailCost;
-    State<T> *cameFrom;
+    T state; // the representation of the state
+    double cost; // the cost of the state
+    double trailCost; // the cost from the initial state to this state
+    State<T> *cameFrom; // the state we came from in the search
 public:
+    // constructor
     State(T state1) {
         this->state = state1;
         this->trailCost = numeric_limits<double>::infinity();
         this->cameFrom = nullptr;
+        this->cost = 0;
     }
-
+    // constructor
     State(T state1, double c) {
         this->trailCost = numeric_limits<double>::infinity();
         this->state = state1;
         this->cost = c;
         this->cameFrom = nullptr;
     }
-
+    // operator == for State
     bool operator==(State<T> *&s) {
         return this->state == s;
     }
-
+    // getters and setters
     void setCameFrom(State<T>* s) {
         this->cameFrom = s;
     }
@@ -54,7 +56,7 @@ public:
         this->trailCost = c;
     }
 
-    double getTrialCost() {
+    double getTrialCost() const {
         return this->trailCost;
     }
 
