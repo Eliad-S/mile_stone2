@@ -44,8 +44,6 @@ void MyClientHandler::handleClient(int client_socket) {
     }
      cout<<"finish loop"<<endl;
     //write the massage into file
-    ISearchable<Point *> *matrix = createMatrix();
-    solution = this->solver->solve(matrix);
     char *bufferOut = &solution[0];
     int is_send = send(client_socket, bufferOut, solution.length(), 0);
     if (is_send == -1) {
