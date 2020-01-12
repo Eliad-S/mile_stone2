@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/AStar.h">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/BFS.h">
+			<Option target="mile_stone2"/>
+		</Unit>
 		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/BestFirstSearch.h">
 			<Option target="mile_stone2"/>
 		</Unit>
@@ -96,6 +102,9 @@
 		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Compare.h">
 			<Option target="mile_stone2"/>
 		</Unit>
+		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/DFS.h">
+			<Option target="mile_stone2"/>
+		</Unit>
 		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/FileCacheManager.cpp">
 			<Option target="mile_stone2"/>
 		</Unit>
@@ -106,6 +115,9 @@
 			<Option target="mile_stone2"/>
 		</Unit>
 		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Graph.h">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/HillClimbing.h">
 			<Option target="mile_stone2"/>
 		</Unit>
 		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/ISearchable.h">

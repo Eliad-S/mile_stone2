@@ -17,7 +17,9 @@ public:
     // Searcher's abstract method overriding
     SOLUTION search(ISearchable<T>* searchable) {
         bool inClosed = false, inOpen;
-        this->addOpenList(searchable->getInitialState());
+        State<T>* initialState = searchable->getInitialState();
+        initialState->setTrailCost(initialState->getCost());
+        this->addOpenList(initialState);
         unordered_set<State<T>*> closed;
         // while the priority queue is not empty
         while (this->openList.size() > 0) {
@@ -40,7 +42,7 @@ public:
                     state->setCameFrom(n);
                     state->setTrailCost(possibleTrialCost);
                     this->addOpenList(state);
-                } else if (possibleTrialCost < state->getCost()) {
+                } else if (possibleTrialCost < state->getTrialCost()) {
                     // the trial cost from n to state is better than the previous
                     state->setCameFrom(n);
                     state->setTrailCost(possibleTrialCost);

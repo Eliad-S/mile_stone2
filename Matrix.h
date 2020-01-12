@@ -51,8 +51,13 @@ class Matrix : public Searchable<Point*> {
     return sons;
   }
   virtual vector<State<Point*>*> getAllState() {
-      vector<State<Point>*>
-
+      vector<State<Point*>*> allStates;
+      for (vector<State<Point*>*> v : this->vertexes) {
+          for (State<Point*>* s : v) {
+              allStates.push_back(s);
+          }
+      }
+      return allStates;
   }
 
 };
