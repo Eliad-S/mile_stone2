@@ -36,7 +36,7 @@ void MySerialServer::open(int p, ClientHandler *c) {
 }
 void MySerialServer::start(int sockfd, sockaddr_in address, ClientHandler *c) {
 
-  int iResult, server_socket, valRead;
+  int iResult, client_socket, valRead;
   char bufferIn[1500] = {0};
   string bufferOut;
   while (!MySerialServer::shouldStop) {
@@ -48,17 +48,17 @@ void MySerialServer::start(int sockfd, sockaddr_in address, ClientHandler *c) {
     tv.tv_usec = 0;
     iResult = select(sockfd + 1, &rfds, (fd_set *) 0, (fd_set *) 0, &tv);
     if (iResult > 0) {
-      server_socket = accept(sockfd, (struct sockaddr *) &address, (socklen_t *) &address);
+      client_socket = accept(sockfd, (struct sockaddr *) &address, (socklen_t *) &address);
     } else {
       cout << "didnt connect" << endl;
       continue;
     }
-    if (server_socket == -1) {
+    if (client_socket == -1) {
       cerr << "Error accepting clinet" << endl;
     }
-    c->handleClient(server_socket);
+    c->handleClient(client_socket);
     //while the client still sending massage - to "End"
-    close(server_socket);
+    close(client_socket);
     //break;
   }
   close(sockfd);

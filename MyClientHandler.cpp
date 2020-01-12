@@ -11,12 +11,12 @@
 #include "ISearchable.h"
 #include "Matrix.h"
 
-void MyClientHandler::handleClient(int server_socket) {
+void MyClientHandler::handleClient(int client_socket) {
   int counter = 0;
   while (true) {
     char buffer[6000] = {0};
     //receive massage
-    int valRead = read(server_socket, buffer, 6000);
+    int valRead = read(client_socket, buffer, 6000);
 
     if (valRead == 0) {
       break;
@@ -47,7 +47,7 @@ void MyClientHandler::handleClient(int server_socket) {
     ISearchable<Point *> *matrix = createMatrix();
     solution = this->solver->solve(matrix);
     char *bufferOut = &solution[0];
-    int is_send = send(server_socket, bufferOut, solution.length(), 0);
+    int is_send = send(client_socket, bufferOut, solution.length(), 0);
     if (is_send == -1) {
       cerr << "error sending massage to client" << endl;
     }

@@ -12,7 +12,7 @@ using namespace server_side;
 class MyTestClientHandler: public ClientHandler {
   Solver<string,string> *solver;
   CacheManager<string, string> *file_cache;
-  virtual void handleClient(int server_socket);
+  virtual void handleClient(int client_socket);
  public:
   MyTestClientHandler(Solver<string,string> *solver_,CacheManager<string,string>* cache) {
     this->solver = solver_;

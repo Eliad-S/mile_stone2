@@ -4,11 +4,11 @@
 #include <unistd.h>
 #include <sys/socket.h>
 #include "MyTestClientHandler.h"
-void MyTestClientHandler:: handleClient(int server_socket){
+void MyTestClientHandler:: handleClient(int client_socket){
   while(true) {
     char buffer[1500] = {0};
     //receive massage
-    int valRead = read(server_socket, buffer, 1500);
+    int valRead = read(client_socket, buffer, 1500);
     if(valRead == 0) {
       break;
     }
@@ -17,7 +17,7 @@ void MyTestClientHandler:: handleClient(int server_socket){
 
     if (problem.compare("End") == 0) {
       cout << "endddd" << endl;
-      close(server_socket);
+      close(client_socket);
       break;
     }
     //write the massage into file
@@ -33,7 +33,7 @@ void MyTestClientHandler:: handleClient(int server_socket){
 
     cout<<"solution : "<<solution<<endl;
     char *bufferOut = &solution[0];
-    int is_send = send(server_socket, bufferOut, solution.length(), 0);
+    int is_send = send(client_socket, bufferOut, solution.length(), 0);
     if (is_send == -1) {
       cerr << "error sending massage to client" << endl;
     }
