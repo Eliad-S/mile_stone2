@@ -13,6 +13,7 @@
 
 void MyClientHandler::handleClient(int client_socket) {
   int counter = 0;
+  allProblemInString = "";
   while (true) {
     char buffer[6000] = {0};
     //receive massage
@@ -28,7 +29,7 @@ void MyClientHandler::handleClient(int client_socket) {
     string solution;
     if (problem.compare("end") == 0) {
       cout << "endddd" << endl;
-      if (file_cache->isSolved(problem)) {
+      if (file_cache->isSolved(allProblemInString)) {
         solution = file_cache->getSolution(problem);
         cout << "from file: " << solution << endl;
       } else {
@@ -40,6 +41,7 @@ void MyClientHandler::handleClient(int client_socket) {
     } else {
       cout << "new line" << endl;
       allProblem.push_back(problem);
+      allProblemInString += problem;
       continue;
     }
      cout<<"finish loop"<<endl;

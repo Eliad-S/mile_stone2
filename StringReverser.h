@@ -11,6 +11,9 @@
 using namespace std;
 class StringReverser : public Solver<string,string> {
 public:
+    /*
+     * the function returns the reverse of the given string
+     */
     virtual string solve(string problem) {
         reverse(problem.begin(), problem.end());
         string solution = problem.c_str();

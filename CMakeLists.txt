@@ -7,4 +7,4 @@ add_executable(mile_stone2 main.cpp ClientHandler.h Solver.h Server.h
         CacheManager.h FileCacheManager.cpp MySerialServer.cpp
         Solver.h StringReverser.cpp Searcher.h ISearchable.h ISearcher.h
         BestFirstSearch.h State.h Searchable.h Compare.h Graph.cpp MyClientHandler.cpp SolverSearch.cpp
-        Point.cpp Matrix.h MyTestClientHandler.cpp)
+        Point.cpp Matrix.h MyTestClientHandler.cpp BFS.h DFS.h)

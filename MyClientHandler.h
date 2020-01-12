@@ -12,8 +12,9 @@
 #include "ISearchable.h"
 #include "Point.h"
 using namespace std;
-class MyClientHandler : public ClientHandler{
+class MyClientHandler : public ClientHandler {
   vector<string> allProblem;
+  string allProblemInString;
   Solver<ISearchable<Point*>*,string> *solver;
   CacheManager<string, string> *file_cache;
   virtual void handleClient(int socket);

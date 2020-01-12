@@ -50,6 +50,10 @@ class Matrix : public Searchable<Point*> {
     }
     return sons;
   }
+  virtual vector<State<Point*>*> getAllState() {
+      vector<State<Point>*>
+
+  }
 
 };
 

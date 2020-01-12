@@ -8,7 +8,9 @@
 using namespace std;
 #ifndef MILE_STONE2_STATE_H
 #define MILE_STONE2_STATE_H
-
+#define BLACK 3
+#define GREY 2
+#define WHITE 1
 template<class T>
 class State {
 private:
@@ -16,6 +18,7 @@ private:
     double cost; // the cost of the state
     double trailCost; // the cost from the initial state to this state
     State<T> *cameFrom; // the state we came from in the search
+    int color;
 public:
     // constructor
     State(T state1) {
@@ -23,6 +26,7 @@ public:
         this->trailCost = numeric_limits<double>::infinity();
         this->cameFrom = nullptr;
         this->cost = 0;
+        this->color = WHITE;
     }
     // constructor
     State(T state1, double c) {
@@ -30,6 +34,7 @@ public:
         this->state = state1;
         this->cost = c;
         this->cameFrom = nullptr;
+        this->color = WHITE;
     }
     // operator == for State
     bool operator==(State<T> *&s) {
@@ -62,6 +67,24 @@ public:
 
     T getT() {
         return this->state;
+    }
+    void setBlack() {
+        this->color = BLACK;
+    }
+    void setWhite() {
+        this->color = WHITE;
+    }
+    void setGrey() {
+        this->color = GREY;
+    }
+    bool isBlack() {
+        return this->color == BLACK;
+    }
+    bool isWhite() {
+        return this->color == WHITE;
+    }
+    bool isGrey() {
+        return this->color == GREY;
     }
 
 };
