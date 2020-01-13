@@ -7,21 +7,20 @@
 using namespace std;
 #ifndef MILE_STONE2__FILECACHEMANAGER_H_
 #define MILE_STONE2__FILECACHEMANAGER_H_
-template<typename P, typename S>
-class FileCacheManager : public CacheManager<P,S> {
+class FileCacheManager : public CacheManager<string,string> {
   // <problem, solution>
-  unordered_map<P, S> cacheMap;
+  unordered_map<string, string> cacheMap;
   hash<string> hasher;
 
  public:
 
-  virtual bool isSolved(P problem) {
+  virtual bool isSolved(string problem) {
     if (cacheMap.find(problem) != cacheMap.end() || exist(problem)) {
       return true;
     }
     return false;
   }
-  virtual S getSolution(P problem) {
+  virtual string getSolution(string problem) {
     auto item = cacheMap.find(problem);
     //if the key doesn't exist
     if (item == cacheMap.end()) {
@@ -30,7 +29,7 @@ class FileCacheManager : public CacheManager<P,S> {
         throw "Error: The key doesn't existing";
       }
       //read object from file.
-      S solution = this->readObj(problem,solution);
+      string solution = this->readObj(problem);
 
       size_t hash = hasher(problem);
       cacheMap[to_string(hash)] = solution;
@@ -40,25 +39,29 @@ class FileCacheManager : public CacheManager<P,S> {
     }
   }
 
-  virtual void saveSolution(P problem, S &solution) {
+  virtual void saveSolution(string problem, string &solution) {
     //will always be string
     size_t hash = hasher(problem);
-    cacheMap[to_string(hash)] = solution;
-    ofstream outFile(to_string(hash), std::ios::binary);
+    cacheMap[problem] = to_string(hash);
+    ofstream outFile(to_string(hash));
     if (!outFile) {
       throw "File create error";
     }
-    outFile.write((char *) &solution, sizeof(solution));
+    outFile<<solution;
     outFile.close();
   }
 
-  S &readObj(P problem, S &solution) {
+  string readObj(string problem) {
+    string solution ="";
     size_t hash = hasher(problem);
-    ifstream inFile(to_string(hash), std::ios::binary);
+    ifstream inFile(to_string(hash));
     if (!inFile) {
       throw "Can't open file";
     }
-    inFile.read((char *) &solution, sizeof(solution));
+    string line;
+    while (inFile >> line) {
+      solution += line;
+    }
     inFile.close();
     return solution;
   }

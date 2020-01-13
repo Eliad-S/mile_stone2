@@ -53,6 +53,7 @@ void MyClientHandler::handleClient(int client_socket) {
       cerr << "error sending massage to client" << endl;
     }
     cout << "bufferOut : " << solution << endl;
+    break;
   }
 }
 

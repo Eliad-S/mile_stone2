@@ -10,12 +10,12 @@
 #include "DFS.h"
 int main() {
   MySerialServer* s = new MySerialServer();
-  CacheManager<string, string>* fileCache= new FileCacheManager<string, string>();
+  CacheManager<string, string>* fileCache= new FileCacheManager();
   Solver<string,string>* solver = new StringReverser();
-  Searcher<Point*,string> * bfs = new DFS<Point*,string>();
+  Searcher<Point*,string> * bfs = new BestFirstSearch<Point*,string>();
   Solver<ISearchable<Point*>*,string> *solverS = new SolverSearch<ISearchable<Point*>*,string,Point*>(bfs);
   ClientHandler *c  = new MyClientHandler(solverS,fileCache);
-  s->open(12345, c);
+  s->open(12346, c);
 
 
   delete fileCache;
