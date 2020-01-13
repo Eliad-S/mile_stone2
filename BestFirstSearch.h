@@ -13,6 +13,7 @@ using namespace std;
 
 template<class T, class SOLUTION>
 class BestFirstSearch : public Searcher<T, SOLUTION> {
+    priority_queue<State<T> *, vector<State<T> *>, Compare<T>> openList;
 public:
     // Searcher's abstract method overriding
     SOLUTION search(ISearchable<T>* searchable) {
@@ -42,8 +43,8 @@ public:
                     state->setCameFrom(n);
                     state->setTrailCost(possibleTrialCost);
                     this->addOpenList(state);
+                // if the current way is better than the previous:
                 } else if (possibleTrialCost < state->getTrialCost()) {
-                    // the trial cost from n to state is better than the previous
                     state->setCameFrom(n);
                     state->setTrailCost(possibleTrialCost);
                     if (!this->inOpenList(state)) {
@@ -56,6 +57,63 @@ public:
                 }
                 inClosed = false;
             }
+        }
+    }
+    /*
+     * the function pop from the queue the state with the greatest priority
+     * and updates the evaluated Nodes.
+     */
+    State<T>* popOpenList() {
+        this->evaluatedNodes++;
+        if (openList.empty()) {
+            return nullptr;
+        }
+        auto top = openList.top();
+        openList.pop();
+        return top;
+    }
+    /*
+     * the function checks if the state is in the OpenList (myQueue)
+     */
+    bool inOpenList(State<T>* state) {
+        bool inOpen = false;
+        vector<State<T>*> allStatesInOpen;
+        while (!this->openList.empty()) {
+            State<T>* s = this->openList.top();
+            this->openList.pop();
+            if (s == state) {
+                inOpen = true;
+            }
+            allStatesInOpen.push_back(s);
+        }
+        // insert again to the priority myQueue
+        for (State<T>* s : allStatesInOpen) {
+            this->openList.push(s);
+        }
+        return inOpen;
+    }
+    /*
+     * the function inserts the state to the OpenList (myQueue)
+     */
+    void addOpenList(State<T>* state) {
+        this->openList.push(state);
+    }
+    /*
+     * the function removes the state from the OpenList (myQueue)
+     */
+    void removeOpenList(State<T>* removeState) {
+        vector<State<T>*> allStatesInOpen;
+        // insert to vector all the state except of the "removeState"
+        while (!this->openList.empty()) {
+            State<T>* s = this->openList.top();
+            this->openList.pop();
+            if (!(s == removeState)) {
+                allStatesInOpen.push_back(s);
+            }
+        }
+        // insert again to the priority myQueue
+        for (State<T>* s : allStatesInOpen) {
+            this->openList.push(s);
         }
     }
 };

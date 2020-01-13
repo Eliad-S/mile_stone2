@@ -11,11 +11,13 @@ template<class T, class SOLUTION>
 class DFS : public Searcher<T, SOLUTION> {
     int time = 0;
 public:
+    // Searcher's abstract method overriding
     SOLUTION search(ISearchable<T>* searchable) {
         State<T>* initialState = searchable->getInitialState();
         State<T>* u;
         vector<State<T>*> allStates = searchable->getAllState();
         for (State<T>* u : allStates) {
+            this->evaluatedNodes++;
             if (u->isWhite()) {
                 dfsVisit(u, searchable);
             }
