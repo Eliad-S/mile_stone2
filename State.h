@@ -44,7 +44,6 @@ public:
     void setCameFrom(State<T>* s) {
         this->cameFrom = s;
     }
-
     void setCost(double c) {
         this->cost = c;
     }
@@ -71,22 +70,12 @@ public:
     void setBlack() {
         this->color = BLACK;
     }
-    void setWhite() {
-        this->color = WHITE;
-    }
     void setGrey() {
         this->color = GREY;
-    }
-    bool isBlack() {
-        return this->color == BLACK;
     }
     bool isWhite() {
         return this->color == WHITE;
     }
-    bool isGrey() {
-        return this->color == GREY;
-    }
-
 };
 
 #endif //MILE_STONE2_STATE_H

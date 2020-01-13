@@ -12,7 +12,9 @@ class AStar : public Searcher<T, SOLUTION> {
 public:
     // Searcher's abstract method overriding
     SOLUTION search(ISearchable<T>* searchable) {
-        this->addOpenList(searchable->getInitialState());
+        State<T>* initialState = searchable->getInitialState();
+        this->addOpenList(initialState);
+        initialState->setTrailCost(0);
         // while the priority queue is not empty
         while (this->openList.size() > 0) {
             State<T>* n = this->popOpenList();

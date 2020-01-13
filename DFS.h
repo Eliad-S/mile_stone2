@@ -7,9 +7,11 @@
 
 
 #include "Searcher.h"
+#include <set>
 template<class T, class SOLUTION>
 class DFS : public Searcher<T, SOLUTION> {
     int time = 0;
+    set<State<T>*> used;
 public:
     // Searcher's abstract method overriding
     SOLUTION search(ISearchable<T>* searchable) {
@@ -18,23 +20,24 @@ public:
         vector<State<T>*> allStates = searchable->getAllState();
         for (State<T>* u : allStates) {
             this->evaluatedNodes++;
-            if (u->isWhite()) {
+            if (used.find(u) == used.end()) {
                 dfsVisit(u, searchable);
             }
         }
+        // return the solution
+        return searchable->printAll(searchable->getGoalState());
     }
     void dfsVisit(State<T>* u, ISearchable<T>* searchable) {
-        u->setGrey();
+        used.insert(u);
         u->setTrailCost(time);
         time++;
         vector<State<T>*> adj = searchable->getAllPossibleState(u);
         for (State<T>* v : adj) {
-            if (v->isWhite()) {
+            if (used.find(v) == used.end()) {
                 dfsVisit(v, searchable);
                 v->setCameFrom(u);
             }
         }
-        u->setBlack();
         time++;
     }
 };

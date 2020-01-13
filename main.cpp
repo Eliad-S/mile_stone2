@@ -7,7 +7,7 @@
 #include "SolverSearch.h"
 #include "BestFirstSearch.h"
 #include "MyClientHandler.h"
-#include "DFS.h"
+#include "AStar.h"
 int main() {
   MySerialServer* s = new MySerialServer();
   CacheManager<string, string>* fileCache= new FileCacheManager();

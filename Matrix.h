@@ -14,7 +14,7 @@ class Matrix : public Searchable<Point*> {
   Matrix(vector<vector<State<Point*>*>>& v) {
     vertexes = v;
   }
-  virtual string printOne(State<Point*>* s) {
+   virtual string printOne(State<Point*>* s) {
     State<Point*>* father = s->getCameFrom();
     Point* fatherPoint = father->getT();
     Point* sonPoint = s->getT();
