@@ -5,6 +5,7 @@
 #ifndef MILE_STONE2__SOLVERSEARCH_H_
 #define MILE_STONE2__SOLVERSEARCH_H_
 
+#include <iostream>
 #include "Solver.h"
 #include "Searcher.h"
 
@@ -20,6 +21,7 @@ public:
      * solve the problem by the search algorithm
      */
     virtual S solve(P problem) {
+      cout << this->searcher->search(problem)<<endl;
         return this->searcher->search(problem);
     }
 };

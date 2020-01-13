@@ -26,6 +26,7 @@ class MyClientHandler : public ClientHandler {
     this->solver = solver_;
     this->file_cache = cache;
   }
+  vector<string> splitLines(string basic_string);
 };
 
 #endif //MILE_STONE2__MYCLIENTHANDLER_H_

@@ -7,15 +7,15 @@
 #include "SolverSearch.h"
 #include "BestFirstSearch.h"
 #include "MyClientHandler.h"
-#include "BFS.h"
+#include "DFS.h"
 int main() {
   MySerialServer* s = new MySerialServer();
   CacheManager<string, string>* fileCache= new FileCacheManager<string, string>();
   Solver<string,string>* solver = new StringReverser();
-  Searcher<Point*,string> * bfs = new BFS<Point*,string>();
+  Searcher<Point*,string> * bfs = new DFS<Point*,string>();
   Solver<ISearchable<Point*>*,string> *solverS = new SolverSearch<ISearchable<Point*>*,string,Point*>(bfs);
   ClientHandler *c  = new MyClientHandler(solverS,fileCache);
-  s->open(12346, c);
+  s->open(12345, c);
 
 
   delete fileCache;

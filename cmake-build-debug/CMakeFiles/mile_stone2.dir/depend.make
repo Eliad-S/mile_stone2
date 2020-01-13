@@ -57,6 +57,7 @@ CMakeFiles/mile_stone2.dir/main.cpp.o: ../BestFirstSearch.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../CacheManager.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../ClientHandler.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../Compare.h
+CMakeFiles/mile_stone2.dir/main.cpp.o: ../DFS.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../FileCacheManager.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../ISearchable.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../ISearcher.h

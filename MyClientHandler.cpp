@@ -14,6 +14,8 @@
 void MyClientHandler::handleClient(int client_socket) {
   int counter = 0;
   allProblemInString = "";
+  int flag = 0;
+  string solution;
   while (true) {
     char buffer[6000] = {0};
     //receive massage
@@ -24,27 +26,26 @@ void MyClientHandler::handleClient(int client_socket) {
     }
     string problem = string(buffer);
     problem = problem.substr(0, valRead);
-    cout << "before loop" << endl;
+    cout << "new line" << endl;
+    allProblemInString += problem;
 
-    string solution;
-    if (problem.compare("end") == 0) {
+    if (allProblemInString.find("end") < allProblemInString.size()) {
       cout << "endddd" << endl;
+      allProblem = splitLines(allProblemInString);
       if (file_cache->isSolved(allProblemInString)) {
-        solution = file_cache->getSolution(problem);
+        solution = file_cache->getSolution(allProblemInString);
         cout << "from file: " << solution << endl;
       } else {
         //create matrix
         ISearchable<Point *> *matrix = createMatrix();
         solution = solver->solve(matrix);
-        file_cache->saveSolution(problem, solution);
+        file_cache->saveSolution(allProblemInString, solution);
       }
     } else {
-      cout << "new line" << endl;
-      allProblem.push_back(problem);
-      allProblemInString += problem;
       continue;
     }
-     cout<<"finish loop"<<endl;
+
+    cout << "before loop" << endl;
     //write the massage into file
     char *bufferOut = &solution[0];
     int is_send = send(client_socket, bufferOut, solution.length(), 0);
@@ -64,11 +65,10 @@ ISearchable<Point *> *MyClientHandler::createMatrix() {
   int i, j = 0;
   for (i = 0; i < size - 2; i++) {
     line = allProblem[i];
-    vector<State<Point*>*> row;
+    vector<State<Point *> *> row;
     while (true) {
       if (line.find(",") < line.find("\n")) {
         substr = line.substr(pos, line.find(","));
-        substr = clearSpaces(substr);
         double val = stod(substr);
         Point *p = new Point(i, j);
         State<Point *> *t = new State<Point *>(p, val);
@@ -77,7 +77,6 @@ ISearchable<Point *> *MyClientHandler::createMatrix() {
         j++;
       } else {
         substr = line.substr(pos, line.find("\n"));
-        substr = clearSpaces(substr);
         double val = stof(substr);
         Point *p = new Point(i, j);
         State<Point *> *t = new State<Point *>(p, val);
@@ -105,23 +104,27 @@ void MyClientHandler::split(string line, double *x, double *y) {
   double val = 0;
   int pos = 0;
   substr = line.substr(pos, line.find(","));
-  substr = clearSpaces(substr);
   val = stod(substr);
   *x = val;
   line = line.substr(line.find(",") + 1);
   substr = line.substr(pos, line.find("\n"));
-  substr = clearSpaces(substr);
   val = stod(substr);
   *y = val;
 }
 
-string MyClientHandler::clearSpaces(string s) {
-  string dest = "";
-  for (unsigned int i = 0; i < s.length(); ++i) {
-    // remove spaces
-    if (s[i] != ' ') {
-      dest += s[i];
+vector<string> MyClientHandler::splitLines(string problem) {
+  vector<string> lines;
+  string line = "";
+  for (char c:problem) {
+    if (c == ' ') {
+      continue;
+    }
+    line += c;
+    if (c == '\n') {
+      lines.push_back(line);
+      line = "";
     }
   }
-  return dest;
+  lines.pop_back();
+  return lines;
 }
