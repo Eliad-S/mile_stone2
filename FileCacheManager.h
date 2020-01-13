@@ -9,40 +9,30 @@ using namespace std;
 #define MILE_STONE2__FILECACHEMANAGER_H_
 class FileCacheManager : public CacheManager<string,string> {
   // <problem, solution>
-  unordered_map<string, string> cacheMap;
   hash<string> hasher;
 
  public:
 
   virtual bool isSolved(string problem) {
-    if (cacheMap.find(problem) != cacheMap.end() || exist(problem)) {
+    if (exist(problem)) {
       return true;
     }
     return false;
   }
   virtual string getSolution(string problem) {
-    auto item = cacheMap.find(problem);
     //if the key doesn't exist
-    if (item == cacheMap.end()) {
       //search in the disk first.
       if (!exist(problem)) {
         throw "Error: The key doesn't existing";
       }
       //read object from file.
       string solution = this->readObj(problem);
-
-      size_t hash = hasher(problem);
-      cacheMap[to_string(hash)] = solution;
       return solution;
-    } else {
-      return item->second;
-    }
   }
 
   virtual void saveSolution(string problem, string &solution) {
     //will always be string
     size_t hash = hasher(problem);
-    cacheMap[problem] = to_string(hash);
     ofstream outFile(to_string(hash));
     if (!outFile) {
       throw "File create error";

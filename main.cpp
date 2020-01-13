@@ -15,7 +15,7 @@ int main() {
   Searcher<Point*,string> * bfs = new BestFirstSearch<Point*,string>();
   Solver<ISearchable<Point*>*,string> *solverS = new SolverSearch<ISearchable<Point*>*,string,Point*>(bfs);
   ClientHandler *c  = new MyClientHandler(solverS,fileCache);
-  s->open(12346, c);
+  s->open(12345, c);
 
 
   delete fileCache;
