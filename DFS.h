@@ -12,6 +12,7 @@ template<class T, class SOLUTION>
 class DFS : public Searcher<T, SOLUTION> {
     int time = 0;
     set<State<T>*> used;
+    bool flag = false;
 public:
     // Searcher's abstract method overriding
     SOLUTION search(ISearchable<T>* searchable) {
@@ -23,6 +24,10 @@ public:
             if (used.find(u) == used.end()) {
                 dfsVisit(u, searchable);
             }
+        }
+        searchable->nullify();
+        if (!flag) {
+            return "no solution";
         }
         // return the solution
         return searchable->printAll(searchable->getGoalState());
@@ -36,6 +41,9 @@ public:
             if (used.find(v) == used.end()) {
                 dfsVisit(v, searchable);
                 v->setCameFrom(u);
+            }
+            if (v == searchable->getGoalState()) {
+                flag = true;
             }
         }
         time++;

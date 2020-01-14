@@ -29,10 +29,16 @@ public:
                     v->setCameFrom(u);
                     addToQueue(v);
                 }
+                if (v == searchable->getGoalState()) {
+                    flag = true;
+                }
             }
         }
         clearQueue();
         searchable->nullify();
+        if (!flag) {
+            return "no solution";
+        }
         return searchable->printAll(searchable->getGoalState());
     }
     State<T>* popQueue() {

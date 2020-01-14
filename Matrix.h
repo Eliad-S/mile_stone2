@@ -129,6 +129,16 @@ class Matrix : public Searchable<Point*> {
     return lines;
   }
 
+  virtual void nullify() {
+    for (vector<State<Point*>*> s : this->vertexes) {
+        for (State<Point*>* t : s) {
+            t->setTrailCost(numeric_limits<double>::infinity());
+            t->setCameFrom(nullptr);
+            t->setFScore(0);
+        }
+    }
+  }
+
 };
 
 #endif //MILE_STONE2__MATRIX_H_
