@@ -5,7 +5,7 @@
 #ifndef MILE_STONE2_SEARCHER_H
 #define MILE_STONE2_SEARCHER_H
 
-#include "Compare.h"
+#include "CompareFScore.h"
 #include "ISearcher.h"
 #include <queue>
 

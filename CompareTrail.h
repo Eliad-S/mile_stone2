@@ -7,7 +7,7 @@
 
 #include "State.h"
 template <class T>
-class Compare {
+class CompareTrail {
 public:
     // compare two states according to the trial cost
     bool operator()(State<T> *s1, State<T> *s2) {

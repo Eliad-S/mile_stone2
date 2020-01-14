@@ -6,14 +6,14 @@
 #define MILE_STONE2_BESTFIRSTSEARCH_H
 
 #include "Searcher.h"
-#include "Compare.h"
+#include "CompareTrail.h"
 #include <bits/stdc++.h>
 
 using namespace std;
 
 template<class T, class SOLUTION>
 class BestFirstSearch : public Searcher<T, SOLUTION> {
-    priority_queue<State<T> *, vector<State<T> *>, Compare<T>> openList;
+    priority_queue<State<T> *, vector<State<T> *>, CompareTrail<T>> openList;
 public:
     // Searcher's abstract method overriding
     SOLUTION search(ISearchable<T>* searchable) {

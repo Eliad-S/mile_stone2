@@ -11,8 +11,9 @@ class Matrix : public Searchable<Point*> {
   vector<vector<State<Point*>*>> vertexes;
 
  public:
-  Matrix(vector<vector<State<Point*>*>>& v) {
-    vertexes = v;
+  Matrix(string problem) {
+    vector<string> lines = splitLines(problem);
+    setMatrix(lines);
   }
    virtual string printOne(State<Point*>* s) {
     State<Point*>* father = s->getCameFrom();
@@ -59,13 +60,73 @@ class Matrix : public Searchable<Point*> {
       }
       return allStates;
   }
-  virtual void nullify() {
-    for (vector<State<Point*>*> s : this->vertexes) {
-        for (State<Point*>* t : s) {
-            t->setTrailCost(numeric_limits<double>::infinity());
-            t->setCameFrom(nullptr);
+  void setMatrix(vector<string> allProblem) {
+    int size = allProblem.size();
+    string line;
+    string substr = "";
+    int pos = 0;
+    int i, j = 0;
+    for (i = 0; i < size - 2; i++) {
+      line = allProblem[i];
+      vector<State<Point *> *> row;
+      while (true) {
+        if (line.find(",") < line.find("\n")) {
+          substr = line.substr(pos, line.find(","));
+          double val = stod(substr);
+          Point *p = new Point(i, j);
+          State<Point *> *t = new State<Point *>(p, val);
+          row.push_back(t);
+          line = line.substr(line.find(",") + 1);
+          j++;
+        } else {
+          substr = line.substr(pos, line.find("\n"));
+          double val = stof(substr);
+          Point *p = new Point(i, j);
+          State<Point *> *t = new State<Point *>(p, val);
+          row.push_back(t);
+          vertexes.push_back(row);
+          j = 0;
+          break;
         }
+      }
     }
+    //get start point
+    double x, y;
+    split(allProblem[i], &x, &y);
+    this->setInitialState(vertexes[x][y]);
+    //get goal point
+    split(allProblem[i + 1], &x, &y);
+    this->setGoalState(vertexes[x][y]);
+  }
+
+  void split(string line, double *x, double *y) {
+    string substr = "";
+    double val = 0;
+    int pos = 0;
+    substr = line.substr(pos, line.find(","));
+    val = stod(substr);
+    *x = val;
+    line = line.substr(line.find(",") + 1);
+    substr = line.substr(pos, line.find("\n"));
+    val = stod(substr);
+    *y = val;
+  }
+
+  vector<string> splitLines(string problem) {
+    vector<string> lines;
+    string line = "";
+    for (char c:problem) {
+      if (c == ' ') {
+        continue;
+      }
+      line += c;
+      if (c == '\n') {
+        lines.push_back(line);
+        line = "";
+      }
+    }
+    lines.pop_back();
+    return lines;
   }
 
 };
