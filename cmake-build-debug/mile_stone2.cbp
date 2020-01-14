@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug"/>
+				<Option working_dir="/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug"/>
+				<Option working_dir="/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="mile_stone2">
-				<Option output="/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/mile_stone2" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug"/>
+				<Option output="/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/mile_stone2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -44,15 +44,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 mile_stone2"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 mile_stone2"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="mile_stone2/fast">
-				<Option output="/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/mile_stone2" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug"/>
+				<Option output="/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/mile_stone2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -67,123 +67,126 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 mile_stone2/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 mile_stone2/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug"/>
+				<Option working_dir="/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/shirgold/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/eliadsellem/CLionProjects/mile_stone2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/AStar.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/AStar.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/BFS.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/BFS.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/BestFirstSearch.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/BestFirstSearch.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/CacheManager.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/CacheManager.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/ClientHandler.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/ClientHandler.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Compare.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/CompareFScore.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/DFS.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/CompareTrail.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/FileCacheManager.cpp">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/DFS.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/FileCacheManager.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/FileCacheManager.cpp">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Graph.cpp">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/FileCacheManager.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Graph.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/Graph.cpp">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/ISearchable.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/Graph.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/ISearcher.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/ISearchable.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Matrix.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/ISearcher.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/MyClientHandler.cpp">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/Matrix.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/MyClientHandler.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/MyClientHandler.cpp">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/MyParallelServer.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/MyClientHandler.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/MySerialServer.cpp">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/MyParallelServer.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/MySerialServer.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/MySerialServer.cpp">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/MyTestClientHandler.cpp">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/MySerialServer.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/MyTestClientHandler.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/MyTestClientHandler.cpp">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Point.cpp">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/MyTestClientHandler.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Point.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/Point.cpp">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Searchable.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/Point.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Searcher.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/Searchable.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Server.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/Searcher.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/Solver.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/Server.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/SolverSearch.cpp">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/Solver.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/SolverSearch.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/SolverSearch.cpp">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/State.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/SolverSearch.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/StringReverser.cpp">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/State.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/StringReverser.h">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/StringReverser.cpp">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/main.cpp">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/StringReverser.h">
 			<Option target="mile_stone2"/>
 		</Unit>
-		<Unit filename="/home/shirgold/CLionProjects/mile_stone2/CMakeLists.txt">
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/main.cpp">
+			<Option target="mile_stone2"/>
+		</Unit>
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

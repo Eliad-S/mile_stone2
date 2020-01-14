@@ -12,11 +12,11 @@
 #include "BFS.h"
 #include "Matrix.h"
 
-vector<double> runAlgorithm(ISearchable<Point*>* matrix, Searcher<Point*,string> * aStar){
+vector<double> runAlgorithm(ISearchable<Point*>* matrix, Searcher<Point*,string> * search){
   vector<double> result;
   for(int i =0; i<10; i++){
-    aStar->search(matrix);
-    result.push_back(aStar->getNumberOfNodesEvaluated());
+    search->search(matrix);
+    result.push_back(search->getNumberOfNodesEvaluated());
   }
   return  result;
 }
@@ -42,30 +42,67 @@ string readFromFile(string file) {
   return content;
 }
 int main() {
+  int A[100][100],filas,columnas,m,k,d;
+  cout<<"filas";
+  cin>>filas;
+  cout<<"columnas";
+  cin>>columnas;
+  d=filas*columnas;
+  srand(time(NULL));
+  for(int i=0;i<filas;i++){
+    for(int j=0;j<columnas;j++){
+      for (k=1; k<=d; k++){
+        m= -1+rand()% (30);
+        A[i][j]= m;
+      }
+    }
+  }
+  for(int i=0;i<filas;i++){
+    for(int j=0;j<columnas;j++){
+      cout<<A[i][j]<<", ";
+    }
+    cout<<"\n";
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   MySerialServer* s = new MySerialServer();
   CacheManager<string, string>* fileCache= new FileCacheManager();
   Solver<string,string>* solver = new StringReverser();
   string m1 = readFromFile("matrix_test.txt");
-  string m2 = readFromFile("matrix_test.txt");
-  string m3 = readFromFile("matrix_test.txt");
-  string m4 = readFromFile("matrix_test.txt");
-  string m5 = readFromFile("matrix_test.txt");
-  string m6 = readFromFile("matrix_test.txt");
-  string m7 = readFromFile("matrix_test.txt");
-  string m8 = readFromFile("matrix_test.txt");
-  string m9 = readFromFile("matrix_test.txt");
-  string m10 = readFromFile("matrix_test.txt");
+//  string m2 = readFromFile("matrix_test.txt");
+//  string m3 = readFromFile("matrix_test.txt");
+//  string m4 = readFromFile("matrix_test.txt");
+//  string m5 = readFromFile("matrix_test.txt");
+//  string m6 = readFromFile("matrix_test.txt");
+//  string m7 = readFromFile("matrix_test.txt");
+//  string m8 = readFromFile("matrix_test.txt");
+//  string m9 = readFromFile("matrix_test.txt");
+//  string m10 = readFromFile("matrix_test.txt");
 
   ISearchable<Point*>* matrix1 = new Matrix(m1);
-  ISearchable<Point*>* matrix2 = new Matrix(m2);
-  ISearchable<Point*>* matrix3 = new Matrix(m3);
-  ISearchable<Point*>* matrix4 = new Matrix(m4);
-  ISearchable<Point*>* matrix5 = new Matrix(m5);
-  ISearchable<Point*>* matrix6 = new Matrix(m6);
-  ISearchable<Point*>* matrix7 = new Matrix(m7);
-  ISearchable<Point*>* matrix8 = new Matrix(m8);
-  ISearchable<Point*>* matrix9 = new Matrix(m9);
-  ISearchable<Point*>* matrix10 = new Matrix(m10);
+//  ISearchable<Point*>* matrix2 = new Matrix(m2);
+//  ISearchable<Point*>* matrix3 = new Matrix(m3);
+//  ISearchable<Point*>* matrix4 = new Matrix(m4);
+//  ISearchable<Point*>* matrix5 = new Matrix(m5);
+//  ISearchable<Point*>* matrix6 = new Matrix(m6);
+//  ISearchable<Point*>* matrix7 = new Matrix(m7);
+//  ISearchable<Point*>* matrix8 = new Matrix(m8);
+//  ISearchable<Point*>* matrix9 = new Matrix(m9);
+//  ISearchable<Point*>* matrix10 = new Matrix(m10);
 
 
   //searcher
@@ -79,18 +116,20 @@ int main() {
   searchers.push_back(BestFS);
   searchers.push_back(dfs);
   searchers.push_back(bfs);
+  cout << dfs->search(matrix1)<<endl;
+  double n = dfs->getNumberOfNodesEvaluated();
 
   //matrix1
-  vector<vector<double >> result1 = runAllAlgorithm(matrix1,searchers);
-  vector<vector<double >> result2 = runAllAlgorithm(matrix2,searchers);
-  vector<vector<double >> result3 = runAllAlgorithm(matrix3,searchers);
-  vector<vector<double >> result4 = runAllAlgorithm(matrix4,searchers);
-  vector<vector<double >> result5 = runAllAlgorithm(matrix5,searchers);
-  vector<vector<double >> result6 = runAllAlgorithm(matrix6,searchers);
-  vector<vector<double >> result7 = runAllAlgorithm(matrix7,searchers);
-  vector<vector<double >> result8 = runAllAlgorithm(matrix8,searchers);
-  vector<vector<double >> result9 = runAllAlgorithm(matrix9,searchers);
-  vector<vector<double >> result10 = runAllAlgorithm(matrix10,searchers);
+//  vector<vector<double >> result1 = runAllAlgorithm(matrix1,searchers);
+//  vector<vector<double >> result2 = runAllAlgorithm(matrix2,searchers);
+//  vector<vector<double >> result3 = runAllAlgorithm(matrix3,searchers);
+//  vector<vector<double >> result4 = runAllAlgorithm(matrix4,searchers);
+//  vector<vector<double >> result5 = runAllAlgorithm(matrix5,searchers);
+//  vector<vector<double >> result6 = runAllAlgorithm(matrix6,searchers);
+//  vector<vector<double >> result7 = runAllAlgorithm(matrix7,searchers);
+//  vector<vector<double >> result8 = runAllAlgorithm(matrix8,searchers);
+//  vector<vector<double >> result9 = runAllAlgorithm(matrix9,searchers);
+//  vector<vector<double >> result10 = runAllAlgorithm(matrix10,searchers);
 
 
 

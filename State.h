@@ -62,7 +62,7 @@ class State {
     this->trailCost = c;
   }
   void setFScore(double c) {
-    this->trailCost = c;
+    this->fScore = c;
   }
 
   double getTrialCost() const {

@@ -9,10 +9,8 @@ using namespace server_side;
 class MyParallelServer : public Server {
 public:
     virtual void open(int p, ClientHandler* c) {
-
     }
     virtual void stop() {
-
     }
 };
 

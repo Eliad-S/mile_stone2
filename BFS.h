@@ -14,7 +14,9 @@ class BFS : public Searcher<T, SOLUTION> {
 public:
     // Searcher's abstract method overriding
     SOLUTION search(ISearchable<T>* searchable) {
-        bool flag = false;
+      searchable->nullify();
+      this->evaluatedNodes = 0;
+      bool flag = false;
         State<T>* initialState = searchable->getInitialState();
         initialState->setTrailCost(0);
         used.insert(initialState);
@@ -35,7 +37,6 @@ public:
             }
         }
         clearQueue();
-        searchable->nullify();
         if (!flag) {
             return "no solution";
         }
