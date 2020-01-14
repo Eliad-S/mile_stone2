@@ -27,6 +27,8 @@ public:
             State<T>* n = this->popOpenList();
             closed.insert(n);
             if (n == searchable->getGoalState()) {
+                clearQueue();
+                searchable->nullify();
                 // return the solution
                 return searchable->printAll(n);
             }
@@ -58,6 +60,9 @@ public:
                 inClosed = false;
             }
         }
+        clearQueue();
+        searchable->nullify();
+        return "no solution";
     }
     /*
      * the function pop from the queue the state with the greatest priority
@@ -114,6 +119,11 @@ public:
         // insert again to the priority myQueue
         for (State<T>* s : allStatesInOpen) {
             this->openList.push(s);
+        }
+    }
+    void clearQueue() {
+        while (!openList.empty()) {
+            openList.pop();
         }
     }
 };

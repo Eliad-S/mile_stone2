@@ -59,6 +59,14 @@ class Matrix : public Searchable<Point*> {
       }
       return allStates;
   }
+  virtual void nullify() {
+    for (vector<State<Point*>*> s : this->vertexes) {
+        for (State<Point*>* t : s) {
+            t->setTrailCost(numeric_limits<double>::infinity());
+            t->setCameFrom(nullptr);
+        }
+    }
+  }
 
 };
 

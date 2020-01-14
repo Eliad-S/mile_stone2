@@ -53,6 +53,7 @@ CMakeFiles/mile_stone2.dir/StringReverser.cpp.o: ../Solver.h
 CMakeFiles/mile_stone2.dir/StringReverser.cpp.o: ../StringReverser.cpp
 CMakeFiles/mile_stone2.dir/StringReverser.cpp.o: ../StringReverser.h
 
+CMakeFiles/mile_stone2.dir/main.cpp.o: ../AStar.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../BestFirstSearch.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../CacheManager.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../ClientHandler.h

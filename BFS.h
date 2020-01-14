@@ -14,6 +14,7 @@ class BFS : public Searcher<T, SOLUTION> {
 public:
     // Searcher's abstract method overriding
     SOLUTION search(ISearchable<T>* searchable) {
+        bool flag = false;
         State<T>* initialState = searchable->getInitialState();
         initialState->setTrailCost(0);
         used.insert(initialState);
@@ -30,6 +31,9 @@ public:
                 }
             }
         }
+        clearQueue();
+        searchable->nullify();
+        return searchable->printAll(searchable->getGoalState());
     }
     State<T>* popQueue() {
         this->evaluatedNodes++;
@@ -45,6 +49,11 @@ public:
      */
     void addToQueue(State<T>* state) {
         myQueue.push(state);
+    }
+    void clearQueue() {
+        while (!myQueue.empty()) {
+            myQueue.pop();
+        }
     }
 };
 

@@ -8,11 +8,12 @@
 #include "BestFirstSearch.h"
 #include "MyClientHandler.h"
 #include "AStar.h"
+#include "DFS.h"
 int main() {
   MySerialServer* s = new MySerialServer();
   CacheManager<string, string>* fileCache= new FileCacheManager();
   Solver<string,string>* solver = new StringReverser();
-  Searcher<Point*,string> * bfs = new BestFirstSearch<Point*,string>();
+  Searcher<Point*,string> * bfs = new AStar<Point*,string>();
   Solver<ISearchable<Point*>*,string> *solverS = new SolverSearch<ISearchable<Point*>*,string,Point*>(bfs);
   ClientHandler *c  = new MyClientHandler(solverS,fileCache);
   s->open(12345, c);
