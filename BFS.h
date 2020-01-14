@@ -15,6 +15,7 @@ public:
     // Searcher's abstract method overriding
     SOLUTION search(ISearchable<T>* searchable) {
       searchable->nullify();
+      used.clear();
       this->evaluatedNodes = 0;
       bool flag = false;
         State<T>* initialState = searchable->getInitialState();

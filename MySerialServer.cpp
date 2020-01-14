@@ -4,7 +4,6 @@
 
 
 #include "MySerialServer.h"
-#define INPUT_FILE "massage.txt"
 #define OUT_FILE "solution.txt"
 bool MySerialServer::shouldStop = false;
 void MySerialServer::open(int p, ClientHandler *c) {

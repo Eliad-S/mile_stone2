@@ -2,19 +2,17 @@
 // Created by shirgold on 13/01/2020.
 //
 
+#include <vector>
+#include <netinet/in.h>
 #include "MyParallelServer.h"
-//
-// Created by eliadsellem on 1/6/20.
-//
+#include "CacheManager.h"
+#include "Solver.h"
+#include "ISearchable.h"
 
-
-#include "MySerialServer.h"
-#define INPUT_FILE "massage.txt"
-#define OUT_FILE "solution.txt"
-bool MySerialServer::shouldStop = false;
-void MySerialServer::open(int p, ClientHandler *c) {
-
+void MyParallelServer::open(int p, ClientHandler *c) {
+  int client_socket, iResult;
   int port = p;
+  vector<thread> threads;
   int sockfd = socket(AF_INET, SOCK_STREAM, 0);
   if (sockfd == -1) {
     //error
@@ -29,23 +27,13 @@ void MySerialServer::open(int p, ClientHandler *c) {
     cerr << "could'nt bind the socket to an ip" << endl;
   }
 //making socket listen to the port
-  if (listen(sockfd, 5) == -1) {
+  if (listen(sockfd, 10) == -1) {
     cerr << "error during listening command" << endl;
   }
-  while true
-  MySerialServer::start(sockfd, address, c);
-  //thread listen_thread (start ,sockfd, address ,c);
-  //shouldStop = true;
-  //listen_thread.join();
+  int noThread = 0;
 
-
-}
-void MySerialServer::start(int sockfd, sockaddr_in address, ClientHandler *c) {
-
-  int iResult, client_socket, valRead;
-  char bufferIn[1500] = {0};
-  string bufferOut;
-  while (!MySerialServer::shouldStop) {
+  while (noThread < 10 && !MyParallelServer::shouldStop) {
+    cout << "Listening" << endl;
     fd_set rfds;
     FD_ZERO(&rfds);
     FD_SET(sockfd, &rfds);
@@ -62,42 +50,28 @@ void MySerialServer::start(int sockfd, sockaddr_in address, ClientHandler *c) {
     if (client_socket == -1) {
       cerr << "Error accepting clinet" << endl;
     }
-    c->handleClient(client_socket);
-    //while the client still sending massage - to "End"
-    close(client_socket);
-    //break;
-  }
-  close(sockfd);
-}
 
-void MySerialServer::stop() {
-  MySerialServer::shouldStop = true;
-}
-
-string MySerialServer::readFromFile() {
-  ifstream out(OUT_FILE, ios::in);
-  if (!out) {
-    cerr << "can't open file" << endl;
-    exit(1);
+    threads.push_back(thread(start, sockfd, address, c));
+    noThread++;
   }
 
-  // get length of file:
-  out.seekg(0, out.end);
-  int length = out.tellg();
-  out.seekg(0, out.beg);
+  for (int i = noThread-1; i >= 0; i++) {
+    threads[i].join();
+    threads.pop_back();
+  }
 
-  char *buffer = new char[length];
-
-  std::cout << "Reading " << length << " characters... \n";
-  // read data as a block:
-  out.read(buffer, length);
-
-  if (out)
-    std::cout << "all characters read successfully.\n";
-  else
-    std::cout << "error: only " << out.gcount() << " could be read\n";
-  out.close();
-  string solution = string(buffer);
-  return solution.substr(0, length);
 }
+void MyParallelServer::start(int client_socket, sockaddr_in address, ClientHandler *c) {
+
+  string bufferOut;
+  c->handleClient(client_socket);
+  //while the client still sending massage - to "End"
+  close(client_socket);
+}
+
+void MyParallelServer::stop() {
+  MyParallelServer::shouldStop = true;
+}
+
+
 

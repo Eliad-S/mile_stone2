@@ -16,6 +16,7 @@ class DFS : public Searcher<T, SOLUTION> {
   // Searcher's abstract method overriding
   SOLUTION search(ISearchable<T> *searchable) {
     searchable->nullify();
+    used.clear();
     this->evaluatedNodes = 0;
     State<T> *initialState = searchable->getInitialState();
     dfsVisit(initialState, searchable);
