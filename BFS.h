@@ -63,6 +63,9 @@ public:
             myQueue.pop();
         }
     }
+  ISearcher<T, SOLUTION>* clone(){
+    return new BFS();
+  }
 };
 
 

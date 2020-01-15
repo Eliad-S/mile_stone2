@@ -5,6 +5,7 @@
 #ifndef MILE_STONE2_MYPARALLELSERVER_H
 #define MILE_STONE2_MYPARALLELSERVER_H
 #include "Server.h"
+#include "MySerialServer.h"
 #include <iostream>
 #include <fstream>
 #include <sys/socket.h>
@@ -12,6 +13,8 @@
 #include <thread>
 using namespace server_side;
 class MyParallelServer : public Server {
+  vector<thread> threads;
+  vector<MySerialServer*> serialServer;
  public:
   virtual void open(int p, ClientHandler *c);
   static void start(int client_socket, sockaddr_in address, ClientHandler *c);

@@ -9,12 +9,13 @@
 #include "Solver.h"
 #include "Searcher.h"
 
+//can adding another tamplate to make the point genery .
 template<typename P, typename S, typename T>
 class SolverSearch : public Solver<P, S> {
-    Searcher<T, S> *searcher;
+    ISearcher<T, S> *searcher;
 public:
     // constructor
-    SolverSearch(Searcher<T, S> *s) {
+    SolverSearch(ISearcher<T, S> *s) {
         this->searcher = s;
     }
     /*
@@ -23,6 +24,9 @@ public:
     virtual S solve(P problem) {
       cout << this->searcher->search(problem)<<endl;
         return this->searcher->search(problem);
+    }
+    Solver<P,S>* clone(){
+      return new SolverSearch(searcher->clone());
     }
 };
 

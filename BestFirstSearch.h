@@ -128,5 +128,8 @@ class BestFirstSearch : public Searcher<T, SOLUTION> {
       openList.pop();
     }
   }
+  ISearcher<T, SOLUTION>* clone(){
+    return new BestFirstSearch();
+  }
 };
 #endif //MILE_STONE2_BESTFIRSTSEARCH_H

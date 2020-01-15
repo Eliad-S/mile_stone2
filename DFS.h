@@ -46,6 +46,9 @@ class DFS : public Searcher<T, SOLUTION> {
     }
     time++;
   }
+  ISearcher<T, SOLUTION>* clone(){
+    return new DFS();
+  }
 };
 
 #endif //MILE_STONE2_DFS_H

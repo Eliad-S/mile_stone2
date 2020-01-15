@@ -16,12 +16,15 @@ using namespace std;
 using namespace server_side;
 class MySerialServer: public Server {
  public:
+  MySerialServer(){
+    shouldStop = false;
+  }
   void open(int p, ClientHandler* c);
   virtual void stop();
 //  void writeIntoFile(string fileName, char * buffer ,int size);
   static string readFromFile();
-  static void start(int sockfd, sockaddr_in address ,ClientHandler* c);
-  static bool shouldStop;
+   void start(int sockfd, sockaddr_in address ,ClientHandler* c);
+   bool shouldStop;
 };
 
 #endif //MILE_STONE2__MYSERIALSERVER_H_

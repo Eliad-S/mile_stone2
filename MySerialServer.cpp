@@ -5,7 +5,6 @@
 
 #include "MySerialServer.h"
 #define OUT_FILE "solution.txt"
-bool MySerialServer::shouldStop = false;
 void MySerialServer::open(int p, ClientHandler *c) {
 
   int port = p;
@@ -28,25 +27,26 @@ void MySerialServer::open(int p, ClientHandler *c) {
   }
   MySerialServer::start(sockfd, address, c);
   //thread listen_thread (start ,sockfd, address ,c);
-  //shouldStop = true;
-  //listen_thread.join();
-
+  close(sockfd);
 
 }
 void MySerialServer::start(int sockfd, sockaddr_in address, ClientHandler *c) {
-
+  cout<<"enter"<<endl;
   int iResult, client_socket, valRead;
   char bufferIn[1500] = {0};
   string bufferOut;
-  while (!MySerialServer::shouldStop) {
+  while (!shouldStop) {
     fd_set rfds;
     FD_ZERO(&rfds);
     FD_SET(sockfd, &rfds);
     struct timeval tv;
     tv.tv_sec = (long) 10;
     tv.tv_usec = 0;
+    cout<<"wait"<<endl;
+
     iResult = select(sockfd + 1, &rfds, (fd_set *) 0, (fd_set *) 0, &tv);
     if (iResult > 0) {
+
       client_socket = accept(sockfd, (struct sockaddr *) &address, (socklen_t *) &address);
     } else {
       cout << "didnt connect" << endl;
@@ -60,11 +60,12 @@ void MySerialServer::start(int sockfd, sockaddr_in address, ClientHandler *c) {
     close(client_socket);
     //break;
   }
-  close(sockfd);
+  shouldStop = false;
 }
 
 void MySerialServer::stop() {
-  MySerialServer::shouldStop = true;
+  shouldStop = true;
+  //listen_thread.join();
 }
 
 string MySerialServer::readFromFile() {

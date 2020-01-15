@@ -31,14 +31,14 @@ class AStar : public Searcher<T, SOLUTION> {
       // we arrive to he goal state
       if (q == searchable->getGoalState()) {
         // return the solution
-         string s = searchable->printAll(q);
+        string s = searchable->printAll(q);
         return s;
       }
       closed.insert(q);
       vector<State<T> *> successors = searchable->getAllPossibleState(q);
       for (State<T> *state : successors) {
         inClosed = false;
-        if(state->getCost()<0) {
+        if (state->getCost() < 0) {
           continue;
         }
         double possibleTrialCost = q->getTrialCost() + state->getCost();
@@ -114,6 +114,10 @@ class AStar : public Searcher<T, SOLUTION> {
     while (!openList.empty()) {
       openList.pop();
     }
+  }
+
+  ISearcher<T, SOLUTION>* clone(){
+    return new AStar();
   }
 };
 

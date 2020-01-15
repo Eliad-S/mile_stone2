@@ -19,6 +19,9 @@ public:
         string solution = problem.c_str();
         return solution;
     }
+    Solver* clone(){
+      return new StringReverser();
+    }
 };
 
 

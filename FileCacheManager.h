@@ -3,6 +3,7 @@
 //
 #include <unordered_map>
 #include <fstream>
+#include <mutex>
 #include "CacheManager.h"
 using namespace std;
 #ifndef MILE_STONE2__FILECACHEMANAGER_H_
@@ -10,16 +11,21 @@ using namespace std;
 class FileCacheManager : public CacheManager<string,string> {
   // <problem, solution>
   hash<string> hasher;
+  mutex mutex_;
 
  public:
 
   virtual bool isSolved(string problem) {
+    //mutex_.lock();
     if (exist(problem)) {
+      //mutex_.unlock();
+
       return true;
     }
     return false;
   }
   virtual string getSolution(string problem) {
+    //mutex_.lock();
     //if the key doesn't exist
       //search in the disk first.
       if (!exist(problem)) {
@@ -27,11 +33,14 @@ class FileCacheManager : public CacheManager<string,string> {
       }
       //read object from file.
       string solution = this->readObj(problem);
-      return solution;
+    //mutex_.unlock();
+
+    return solution;
   }
 
   virtual void saveSolution(string problem, string &solution) {
     //will always be string
+    //mutex_.lock();
     size_t hash = hasher(problem);
     ofstream outFile(to_string(hash));
     if (!outFile) {
@@ -39,9 +48,11 @@ class FileCacheManager : public CacheManager<string,string> {
     }
     outFile<<solution;
     outFile.close();
+    //mutex_.unlock();
   }
 
   string readObj(string problem) {
+    //mutex_.lock();
     string solution ="";
     size_t hash = hasher(problem);
     ifstream inFile(to_string(hash));
@@ -53,7 +64,9 @@ class FileCacheManager : public CacheManager<string,string> {
       solution += line;
     }
     inFile.close();
+    //mutex_.unlock();
     return solution;
+
   }
 
 

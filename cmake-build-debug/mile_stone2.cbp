@@ -135,6 +135,9 @@
 		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/MyClientHandler.h">
 			<Option target="mile_stone2"/>
 		</Unit>
+		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/MyParallelServer.cpp">
+			<Option target="mile_stone2"/>
+		</Unit>
 		<Unit filename="/home/eliadsellem/CLionProjects/mile_stone2/MyParallelServer.h">
 			<Option target="mile_stone2"/>
 		</Unit>

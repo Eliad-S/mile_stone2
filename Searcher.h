@@ -27,6 +27,7 @@ public:
     }
 
     virtual SOLUTION search(ISearchable<T>* searchable) = 0;
+
 };
 
 #endif //MILE_STONE2_SEARCHER_H

@@ -13,7 +13,7 @@
 
 void MyClientHandler::handleClient(int client_socket) {
   int counter = 0;
-  allProblemInString = "";
+  string allProblemInString = "";
   int flag = 0;
   string solution;
   while (true) {
@@ -55,6 +55,10 @@ void MyClientHandler::handleClient(int client_socket) {
     cout << "bufferOut : " << solution << endl;
     break;
   }
+}
+ClientHandler *MyClientHandler::clone() {
+  ClientHandler *c = new MyClientHandler(solver->clone(), file_cache);
+  return c;
 }
 
 

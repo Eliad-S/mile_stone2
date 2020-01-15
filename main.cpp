@@ -11,6 +11,7 @@
 #include "DFS.h"
 #include "BFS.h"
 #include "Matrix.h"
+#include "MyParallelServer.h"
 
 vector<double> runAlgorithm(ISearchable<Point*>* matrix, Searcher<Point*,string> * search){
   vector<double> result;
@@ -42,7 +43,7 @@ string readFromFile(string file) {
   return content;
 }
 int main() {
-  MySerialServer* s = new MySerialServer();
+  MyParallelServer* s = new MyParallelServer();
   CacheManager<string, string>* fileCache= new FileCacheManager();
   Solver<string,string>* solver = new StringReverser();
   string m1 = readFromFile("matrix1.txt");
@@ -81,16 +82,16 @@ int main() {
   searchers.push_back(bfs);
 
   //matrix1
-  vector<vector<double >> result1 = runAllAlgorithm(matrix1,searchers);
-  vector<vector<double >> result2 = runAllAlgorithm(matrix2,searchers);
-  vector<vector<double >> result3 = runAllAlgorithm(matrix3,searchers);
-  vector<vector<double >> result4 = runAllAlgorithm(matrix4,searchers);
-  vector<vector<double >> result5 = runAllAlgorithm(matrix5,searchers);
-  vector<vector<double >> result6 = runAllAlgorithm(matrix6,searchers);
-  vector<vector<double >> result7 = runAllAlgorithm(matrix7,searchers);
-  vector<vector<double >> result8 = runAllAlgorithm(matrix8,searchers);
-  vector<vector<double >> result9 = runAllAlgorithm(matrix9,searchers);
-  vector<vector<double >> result10 = runAllAlgorithm(matrix10,searchers);
+//  vector<vector<double >> result1 = runAllAlgorithm(matrix1,searchers);
+//  vector<vector<double >> result2 = runAllAlgorithm(matrix2,searchers);
+//  vector<vector<double >> result3 = runAllAlgorithm(matrix3,searchers);
+//  vector<vector<double >> result4 = runAllAlgorithm(matrix4,searchers);
+//  vector<vector<double >> result5 = runAllAlgorithm(matrix5,searchers);
+//  vector<vector<double >> result6 = runAllAlgorithm(matrix6,searchers);
+//  vector<vector<double >> result7 = runAllAlgorithm(matrix7,searchers);
+//  vector<vector<double >> result8 = runAllAlgorithm(matrix8,searchers);
+//  vector<vector<double >> result9 = runAllAlgorithm(matrix9,searchers);
+//  vector<vector<double >> result10 = runAllAlgorithm(matrix10,searchers);
 
 
 
@@ -108,7 +109,6 @@ int main() {
 //  ClientHandler *c4  = new MyClientHandler(solverS,fileCache);
 
   s->open(12345, c1);
-
 
   delete fileCache;
   delete(solver);

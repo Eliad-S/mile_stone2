@@ -9,8 +9,11 @@
 // T - the type of the representation of the state of the Isearchable
 template <class T, class SOLUTION>
 class ISearcher {
-    virtual SOLUTION search(ISearchable<T>* searchable) = 0;
     virtual int getNumberOfNodesEvaluated() = 0;
+ public:
+  virtual SOLUTION search(ISearchable<T>* searchable) = 0;
+  virtual ISearcher* clone() = 0;
+
 };
 
 

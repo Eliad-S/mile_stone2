@@ -7,9 +7,10 @@
 
 template<typename P, typename S>
 class Solver {
-public:
-    virtual S solve(P problem) = 0;
-    virtual ~Solver(){}
+ public:
+  virtual Solver *clone() = 0;
+  virtual S solve(P problem) = 0;
+  virtual ~Solver() {}
 };
 
 #endif //MILE_STONE2__SOLVER_H_

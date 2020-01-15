@@ -8,11 +8,11 @@
 #include "CacheManager.h"
 #include "Solver.h"
 #include "ISearchable.h"
+#include "MySerialServer.h"
 
 void MyParallelServer::open(int p, ClientHandler *c) {
   int client_socket, iResult;
   int port = p;
-  vector<thread> threads;
   int sockfd = socket(AF_INET, SOCK_STREAM, 0);
   if (sockfd == -1) {
     //error
@@ -30,47 +30,30 @@ void MyParallelServer::open(int p, ClientHandler *c) {
   if (listen(sockfd, 10) == -1) {
     cerr << "error during listening command" << endl;
   }
-  int noThread = 0;
-
-  while (noThread < 10 && !MyParallelServer::shouldStop) {
-    cout << "Listening" << endl;
-    fd_set rfds;
-    FD_ZERO(&rfds);
-    FD_SET(sockfd, &rfds);
-    struct timeval tv;
-    tv.tv_sec = (long) 10;
-    tv.tv_usec = 0;
-    iResult = select(sockfd + 1, &rfds, (fd_set *) 0, (fd_set *) 0, &tv);
-    if (iResult > 0) {
-      client_socket = accept(sockfd, (struct sockaddr *) &address, (socklen_t *) &address);
-    } else {
-      cout << "didnt connect" << endl;
-      continue;
-    }
-    if (client_socket == -1) {
-      cerr << "Error accepting clinet" << endl;
-    }
-
-    threads.push_back(thread(start, sockfd, address, c));
-    noThread++;
+  for(int i=0; i<10; i++){
+    //clone c
+    MySerialServer* s= new MySerialServer();
+    ClientHandler* client_handler = c->clone();
+    serialServer.push_back(s);
+    threads.push_back(thread(&MySerialServer::start,s, sockfd, address, client_handler));
   }
-
-  for (int i = noThread-1; i >= 0; i++) {
+  for (int i = 9; i >= 0; i++) {
     threads[i].join();
     threads.pop_back();
   }
-
+  close(client_socket);
 }
 void MyParallelServer::start(int client_socket, sockaddr_in address, ClientHandler *c) {
 
   string bufferOut;
   c->handleClient(client_socket);
   //while the client still sending massage - to "End"
-  close(client_socket);
 }
 
 void MyParallelServer::stop() {
-  MyParallelServer::shouldStop = true;
+  for(MySerialServer* s:serialServer){
+    s->shouldStop = true;
+  }
 }
 
 

@@ -7,6 +7,7 @@
 using namespace std;
 class ClientHandler{
  public:
+  virtual ClientHandler* clone() = 0;
   virtual void handleClient(int socket) = 0;
   virtual ~ClientHandler(){}
 };
