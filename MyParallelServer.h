@@ -11,14 +11,18 @@
 #include <sys/socket.h>
 #include <unistd.h>
 #include <thread>
+#define LISTENERS 10
 using namespace server_side;
 class MyParallelServer : public Server {
   vector<thread> threads;
-  vector<MySerialServer*> serialServer;
  public:
+  MyParallelServer(){
+    this->shouldStop = false;
+  }
   virtual void open(int p, ClientHandler *c);
-  static void start(int client_socket, sockaddr_in address, ClientHandler *c);
+  void start(int client_socket, sockaddr_in address, ClientHandler *c);
   virtual void stop();
+  int listeners;
   bool shouldStop;
 };
 

@@ -22,7 +22,6 @@ class MySerialServer: public Server {
   void open(int p, ClientHandler* c);
   virtual void stop();
 //  void writeIntoFile(string fileName, char * buffer ,int size);
-  static string readFromFile();
    void start(int sockfd, sockaddr_in address ,ClientHandler* c);
    bool shouldStop;
 };

@@ -68,30 +68,3 @@ void MySerialServer::stop() {
   //listen_thread.join();
 }
 
-string MySerialServer::readFromFile() {
-  ifstream out(OUT_FILE, ios::in);
-  if (!out) {
-    cerr << "can't open file" << endl;
-    exit(1);
-  }
-
-  // get length of file:
-  out.seekg(0, out.end);
-  int length = out.tellg();
-  out.seekg(0, out.beg);
-
-  char *buffer = new char[length];
-
-  std::cout << "Reading " << length << " characters... \n";
-  // read data as a block:
-  out.read(buffer, length);
-
-  if (out)
-    std::cout << "all characters read successfully.\n";
-  else
-    std::cout << "error: only " << out.gcount() << " could be read\n";
-  out.close();
-  string solution = string(buffer);
-  return solution.substr(0, length);
-}
-

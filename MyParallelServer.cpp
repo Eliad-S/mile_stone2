@@ -11,6 +11,7 @@
 #include "MySerialServer.h"
 
 void MyParallelServer::open(int p, ClientHandler *c) {
+  this->listeners = 0;
   int client_socket, iResult;
   int port = p;
   int sockfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -27,33 +28,57 @@ void MyParallelServer::open(int p, ClientHandler *c) {
     cerr << "could'nt bind the socket to an ip" << endl;
   }
 //making socket listen to the port
-  if (listen(sockfd, 10) == -1) {
+  if (listen(sockfd, LISTENERS) == -1) {
     cerr << "error during listening command" << endl;
   }
-  for(int i=0; i<10; i++){
-    //clone c
-    MySerialServer* s= new MySerialServer();
-    ClientHandler* client_handler = c->clone();
-    serialServer.push_back(s);
-    threads.push_back(thread(&MySerialServer::start,s, sockfd, address, client_handler));
+  while (!this->shouldStop) {
+    //the listeners are full.
+    if (listeners >= LISTENERS) {
+      continue;
+    }
+    cout << "enter" << endl;
+    fd_set rfds;
+    FD_ZERO(&rfds);
+    FD_SET(sockfd, &rfds);
+    struct timeval tv;
+    tv.tv_sec = (long) 10;
+    tv.tv_usec = 0;
+    cout << "wait" << endl;
+
+    iResult = select(sockfd + 1, &rfds, (fd_set *) 0, (fd_set *) 0, &tv);
+    if (iResult > 0) {
+
+      client_socket = accept(sockfd, (struct sockaddr *) &address, (socklen_t *) &address);
+      listeners++;
+    } else {
+      cout << "didnt connect" << endl;
+      continue;
+    }
+    if (client_socket == -1) {
+      cerr << "Error accepting clinet" << endl;
+    }
+    ClientHandler *client_handler = c->clone();
+    threads.push_back(thread(&MyParallelServer::start,this, client_socket, address, client_handler));
+//    start(client_socket, address, client_handler);
+    //while the client still sending massage - to "End"
   }
-  for (int i = 9; i >= 0; i++) {
-    threads[i].join();
-    threads.pop_back();
-  }
-  close(client_socket);
 }
 void MyParallelServer::start(int client_socket, sockaddr_in address, ClientHandler *c) {
 
-  string bufferOut;
   c->handleClient(client_socket);
-  //while the client still sending massage - to "End"
+  //finish handling the problem.
+  cout << "finish handling the client" << endl;
+  close(client_socket);
+  this->listeners--;
 }
 
 void MyParallelServer::stop() {
-  for(MySerialServer* s:serialServer){
-    s->shouldStop = true;
+  this->shouldStop = true;
+  for (int i = threads.size() - 1; i >= 0; i++) {
+    threads[i].join();
+    threads.pop_back();
   }
+
 }
 
 
