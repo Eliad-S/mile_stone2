@@ -8,82 +8,74 @@
 using namespace std;
 #ifndef MILE_STONE2_STATE_H
 #define MILE_STONE2_STATE_H
-#define BLACK 3
-#define GREY 2
-#define WHITE 1
+
 template<class T>
 class State {
- private:
-  T state; // the representation of the state
-  double cost; // the cost of the state
-  double trailCost; // the cost from the initial state to this state
-  double fScore;
-  State<T> *cameFrom; // the state we came from in the search
-  int color;
- public:
-  // constructor
-  State(T state1) {
-    this->state = state1;
-    this->trailCost = numeric_limits<double>::infinity();
-    this->cameFrom = nullptr;
-    this->cost = 0;
-    this->color = WHITE;
-    this->fScore = 0;
-  }
-  // constructor
-  State(T state1, double c) {
-    this->trailCost = numeric_limits<double>::infinity();
-    this->state = state1;
-    this->cost = c;
-    this->cameFrom = nullptr;
-    this->color = WHITE;
-  }
-  // operator == for State
-  bool operator==(State<T> *&s) {
-    return this->state == s;
-  }
-  // getters and setters
-  void setCameFrom(State<T> *s) {
-    this->cameFrom = s;
-  }
-  void setCost(double c) {
-    this->cost = c;
-  }
+private:
+    T state; // the representation of the state
+    double cost; // the cost of the state
+    double trailCost; // the cost from the initial state to this state
+    double fScore;
+    State<T> *cameFrom; // the state we came from in the search
+public:
+    // constructor
+    State(T state1) {
+        this->state = state1;
+        this->trailCost = numeric_limits<double>::infinity();
+        this->cameFrom = nullptr;
+        this->cost = 0;
+        this->fScore = 0;
+    }
 
-  double getCost() {
-    return this->cost;
-  }
+    // constructor
+    State(T state1, double c) {
+        this->trailCost = numeric_limits<double>::infinity();
+        this->state = state1;
+        this->cost = c;
+        this->cameFrom = nullptr;
+    }
 
-  State<T> *getCameFrom() {
-    return this->cameFrom;
-  }
+    // operator == for State
+    bool operator==(State<T> *&s) {
+        return this->state == s;
+    }
 
-  void setTrailCost(double c) {
-    this->trailCost = c;
-  }
-  void setFScore(double c) {
-    this->fScore = c;
-  }
+    // getters and setters
+    void setCameFrom(State<T> *s) {
+        this->cameFrom = s;
+    }
 
-  double getTrialCost() const {
-    return this->trailCost;
-  }
-  double getFScore() const {
-    return this->fScore;
-  }
+    void setCost(double c) {
+        this->cost = c;
+    }
 
-  T getT() {
-    return this->state;
-  }
-  void setBlack() {
-    this->color = BLACK;
-  }
-  void setGrey() {
-    this->color = GREY;
-  }
-  bool isWhite() {
-    return this->color == WHITE;
-  }
+    double getCost() {
+        return this->cost;
+    }
+
+    State<T> *getCameFrom() {
+        return this->cameFrom;
+    }
+
+    void setTrailCost(double c) {
+        this->trailCost = c;
+    }
+
+    void setFScore(double c) {
+        this->fScore = c;
+    }
+
+    double getTrialCost() const {
+        return this->trailCost;
+    }
+
+    double getFScore() const {
+        return this->fScore;
+    }
+
+    T getT() {
+        return this->state;
+    }
 };
 
 #endif //MILE_STONE2_STATE_H

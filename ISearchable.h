@@ -10,6 +10,7 @@
 #include <string.h>
 #include <vector>
 using namespace std;
+// T - the type of the representation of the state
 template <class T>
 class ISearchable {
  public:
@@ -19,8 +20,7 @@ class ISearchable {
     virtual vector<State<T>*> getAllState() = 0;
     virtual void setInitialState(State<T>* initial) = 0;
     virtual void setGoalState(State<T>* goal) = 0;
-    //virtual double getWeightOfEdge (State<T>* e1, State<T>* e2) = 0;
-    virtual string printAll(State<T>* goalState) = 0;
+    virtual string printOne(State<Point*>* s) = 0;
     virtual void nullify() = 0;
 };
 

@@ -7,31 +7,35 @@
 
 #include <set>
 #include "Searcher.h"
+
 template<class T, class SOLUTION>
 class BFS : public Searcher<T, SOLUTION> {
-    queue<State<T>*> myQueue;
-    set<State<T>*> used;
+    queue<State<T> *> myQueue;
+    // for know if we used this state or not
+    set<State<T> *> used;
 public:
     // Searcher's abstract method overriding
-    SOLUTION search(ISearchable<T>* searchable) {
-      searchable->nullify();
-      used.clear();
-      this->evaluatedNodes = 0;
-      bool flag = false;
-        State<T>* initialState = searchable->getInitialState();
+    SOLUTION search(ISearchable<T> *searchable) {
+        searchable->nullify();
+        used.clear();
+        this->evaluatedNodes = 0;
+        bool flag = false;
+        State<T> *initialState = searchable->getInitialState();
         initialState->setTrailCost(0);
         used.insert(initialState);
         addToQueue(initialState);
         while (!myQueue.empty()) {
-            State<T>* u = popQueue();
-            vector<State<T>*> adj = searchable->getAllPossibleState(u);
-            for (State<T>* v : adj) {
+            State<T> *u = popQueue();
+            vector<State<T> *> adj = searchable->getAllPossibleState(u);
+            for (State<T> *v : adj) {
+                // we don't arrive to this state before
                 if (used.find(v) == used.end()) {
                     used.insert(v);
                     v->setTrailCost(u->getTrialCost() + 1);
                     v->setCameFrom(u);
                     addToQueue(v);
                 }
+                // arrive to goal state
                 if (v == searchable->getGoalState()) {
                     flag = true;
                 }
@@ -41,9 +45,13 @@ public:
         if (!flag) {
             return "no solution";
         }
-        return searchable->printAll(searchable->getGoalState());
+        return this->printAll(searchable->getGoalState(), searchable);
     }
-    State<T>* popQueue() {
+
+    /*
+     * the function pop from the queue and updates the evaluated Nodes.
+     */
+    State<T> *popQueue() {
         this->evaluatedNodes++;
         if (myQueue.empty()) {
             return nullptr;
@@ -52,20 +60,26 @@ public:
         myQueue.pop();
         return top;
     }
+
     /*
      * the function inserts the state to the queue
      */
-    void addToQueue(State<T>* state) {
+    void addToQueue(State<T> *state) {
         myQueue.push(state);
     }
+
+    /*
+     * the function clear the queue for the next running
+     */
     void clearQueue() {
         while (!myQueue.empty()) {
             myQueue.pop();
         }
     }
-  ISearcher<T, SOLUTION>* clone(){
-    return new BFS();
-  }
+
+    ISearcher<T, SOLUTION> *clone() {
+        return new BFS();
+    }
 };
 
 
