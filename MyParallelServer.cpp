@@ -40,7 +40,7 @@ void MyParallelServer::open(int p, ClientHandler *c) {
     FD_ZERO(&rfds);
     FD_SET(sockfd, &rfds);
     struct timeval tv;
-    tv.tv_sec = (long) 120;
+    tv.tv_sec = (long) 30;
     tv.tv_usec = 0;
 
     iResult = select(sockfd + 1, &rfds, (fd_set *) 0, (fd_set *) 0, &tv);
@@ -73,13 +73,9 @@ void MyParallelServer::start(int client_socket, ClientHandler *c) {
   c->handleClient(client_socket);
   //finish handling the problem.
   cout << "finish handling the client" << endl;
-  for(auto it = threads.begin(); it!=threads.end();it++){
-//   if(it->get_id() == this_thread::get_id()){
-//     threads.erase(it);
-//     break;
-//   }
-  }
+
   this->listeners--;
+  cout << "listeners " << listeners << endl;
   if(listeners == 0){
     noMoreClients = true;
   }
@@ -87,10 +83,14 @@ void MyParallelServer::start(int client_socket, ClientHandler *c) {
 
 void MyParallelServer::stop() {
   this->shouldStop = true;
-  for (int i = threads.size() - 1; i >= 0; i++) {
-    threads[i].join();
-  }
+  cout << "before join" << endl;
+  for (thread & th: threads) {
+    if(th.joinable()){
+      th.join();
+      cout << " join "<< endl;
 
+    }
+  }
 }
 
 
