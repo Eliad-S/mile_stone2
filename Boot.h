@@ -13,11 +13,17 @@ namespace Boot {
     class Main {
     public:
         void main(int port) {
-            Server* s = new MySerialServer();
-            Solver<string,string>* solver = new StringReverser();
-            CacheManager<string,string>* cache = new FileCacheManager();
-            ClientHandler* c = new MyTestClientHandler(solver, cache);
+            MyParallelServer *s = new MyParallelServer();
+            CacheManager<string,string>* fileCache = new FileCacheManager();
+            Searcher<Point *, string> *aStar = new AStar<Point *, string>();
+            Solver<ISearchable<Point *> *, string> *solverAStar = new SolverSearch<string, Point *>(aStar);
+            ClientHandler *c = new MyClientHandler(solverAStar, fileCache);
             s->open(port, c);
+            delete (fileCache);
+            delete (solverAStar);
+            delete (c);
+            delete (aStar);
+
         }
     };
 }

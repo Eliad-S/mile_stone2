@@ -76,7 +76,7 @@ public:
         string substr = "";
         int pos = 0;
         int i, j = 0;
-        for (i = 0; i < size - 2; i++) {
+        for (i = 0; i < size - 3; i++) {
             line = allProblem[i];
             vector<State<Point *> *> row;
             while (true) {

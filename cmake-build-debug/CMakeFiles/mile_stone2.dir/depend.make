@@ -5,13 +5,6 @@ CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.o: ../CacheManager.h
 CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.o: ../FileCacheManager.cpp
 CMakeFiles/mile_stone2.dir/FileCacheManager.cpp.o: ../FileCacheManager.h
 
-CMakeFiles/mile_stone2.dir/Graph.cpp.o: ../Graph.cpp
-CMakeFiles/mile_stone2.dir/Graph.cpp.o: ../Graph.h
-CMakeFiles/mile_stone2.dir/Graph.cpp.o: ../ISearchable.h
-CMakeFiles/mile_stone2.dir/Graph.cpp.o: ../Point.h
-CMakeFiles/mile_stone2.dir/Graph.cpp.o: ../Searchable.h
-CMakeFiles/mile_stone2.dir/Graph.cpp.o: ../State.h
-
 CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o: ../CacheManager.h
 CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o: ../ClientHandler.h
 CMakeFiles/mile_stone2.dir/MyClientHandler.cpp.o: ../ISearchable.h
@@ -50,6 +43,29 @@ CMakeFiles/mile_stone2.dir/MyTestClientHandler.cpp.o: ../Solver.h
 CMakeFiles/mile_stone2.dir/Point.cpp.o: ../Point.cpp
 CMakeFiles/mile_stone2.dir/Point.cpp.o: ../Point.h
 
+CMakeFiles/mile_stone2.dir/RunMatrix.cpp.o: ../AStar.h
+CMakeFiles/mile_stone2.dir/RunMatrix.cpp.o: ../BFS.h
+CMakeFiles/mile_stone2.dir/RunMatrix.cpp.o: ../BestFirstSearch.h
+CMakeFiles/mile_stone2.dir/RunMatrix.cpp.o: ../CacheManager.h
+CMakeFiles/mile_stone2.dir/RunMatrix.cpp.o: ../ClientHandler.h
+CMakeFiles/mile_stone2.dir/RunMatrix.cpp.o: ../CompareFScore.h
+CMakeFiles/mile_stone2.dir/RunMatrix.cpp.o: ../CompareTrail.h
+CMakeFiles/mile_stone2.dir/RunMatrix.cpp.o: ../DFS.h
+CMakeFiles/mile_stone2.dir/RunMatrix.cpp.o: ../FileCacheManager.h
+CMakeFiles/mile_stone2.dir/RunMatrix.cpp.o: ../ISearchable.h
+CMakeFiles/mile_stone2.dir/RunMatrix.cpp.o: ../ISearcher.h
+CMakeFiles/mile_stone2.dir/RunMatrix.cpp.o: ../Matrix.h
+CMakeFiles/mile_stone2.dir/RunMatrix.cpp.o: ../MySerialServer.h
+CMakeFiles/mile_stone2.dir/RunMatrix.cpp.o: ../Point.h
+CMakeFiles/mile_stone2.dir/RunMatrix.cpp.o: ../RunMatrix.cpp
+CMakeFiles/mile_stone2.dir/RunMatrix.cpp.o: ../RunMatrix.h
+CMakeFiles/mile_stone2.dir/RunMatrix.cpp.o: ../Searchable.h
+CMakeFiles/mile_stone2.dir/RunMatrix.cpp.o: ../Searcher.h
+CMakeFiles/mile_stone2.dir/RunMatrix.cpp.o: ../Server.h
+CMakeFiles/mile_stone2.dir/RunMatrix.cpp.o: ../Solver.h
+CMakeFiles/mile_stone2.dir/RunMatrix.cpp.o: ../State.h
+CMakeFiles/mile_stone2.dir/RunMatrix.cpp.o: ../StringReverser.h
+
 CMakeFiles/mile_stone2.dir/SolverSearch.cpp.o: ../CompareFScore.h
 CMakeFiles/mile_stone2.dir/SolverSearch.cpp.o: ../ISearchable.h
 CMakeFiles/mile_stone2.dir/SolverSearch.cpp.o: ../ISearcher.h
@@ -67,6 +83,7 @@ CMakeFiles/mile_stone2.dir/StringReverser.cpp.o: ../StringReverser.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../AStar.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../BFS.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../BestFirstSearch.h
+CMakeFiles/mile_stone2.dir/main.cpp.o: ../Boot.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../CacheManager.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../ClientHandler.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../CompareFScore.h
@@ -81,6 +98,7 @@ CMakeFiles/mile_stone2.dir/main.cpp.o: ../MyParallelServer.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../MySerialServer.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../MyTestClientHandler.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../Point.h
+CMakeFiles/mile_stone2.dir/main.cpp.o: ../RunMatrix.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../Searchable.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../Searcher.h
 CMakeFiles/mile_stone2.dir/main.cpp.o: ../Server.h

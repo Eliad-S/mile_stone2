@@ -28,6 +28,9 @@ public:
             State<T> *u = popQueue();
             vector<State<T> *> adj = searchable->getAllPossibleState(u);
             for (State<T> *v : adj) {
+                if (v->getCost() < 0) {
+                    continue;
+                }
                 // we don't arrive to this state before
                 if (used.find(v) == used.end()) {
                     used.insert(v);
@@ -76,6 +79,7 @@ public:
             myQueue.pop();
         }
     }
+
 
     ISearcher<T, SOLUTION> *clone() {
         return new BFS();

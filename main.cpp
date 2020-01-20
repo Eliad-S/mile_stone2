@@ -12,7 +12,8 @@
 #include "BFS.h"
 #include "MyParallelServer.h"
 #include "RunMatrix.h"
-
+#include "Boot.h"
+using namespace Boot;
 vector<double> runAlgorithm(ISearchable<Point *> *matrix, Searcher<Point *, string> *search) {
     vector<double> result;
     for (int i = 0; i < 10; i++) {
@@ -45,35 +46,11 @@ string readFromFile(string file) {
 }
 
 int main(int argc, char* argv[]) {
-    MyParallelServer *s = new MyParallelServer();
-    CacheManager<string, string> *fileCache = new FileCacheManager();
-    Solver<string, string> *solver = new StringReverser();
-    RunMatrix* run = new RunMatrix();
-    map<string, vector<vector<double >>> map = run->returnResults(fileCache);
-
-
-    //searcher
-    Searcher<Point *, string> *aStar = new AStar<Point *, string>();
-    Searcher<Point *, string> *BestFS = new BestFirstSearch<Point *, string>();
-    Searcher<Point *, string> *dfs = new DFS<Point *, string>();
-    Searcher<Point *, string> *bfs = new BFS<Point *, string>();
-
-    //solvers
-    Solver<ISearchable<Point *> *, string> *solverAStar = new SolverSearch<string, Point *>(aStar);
-    Solver<ISearchable<Point *> *, string> *solverBestFS = new SolverSearch<string, Point *>(BestFS);
-    Solver<ISearchable<Point *> *, string> *solverDFS = new SolverSearch<string, Point *>(dfs);
-    Solver<ISearchable<Point *> *, string> *solverBFS = new SolverSearch<string, Point *>(bfs);
-
-    //clients
-    ClientHandler *c1 = new MyClientHandler(solverBFS, fileCache);
-    ClientHandler *c2 = new MyClientHandler(solverBestFS, fileCache);
-    ClientHandler *c3 = new MyClientHandler(solverDFS, fileCache);
-    ClientHandler *c4 = new MyClientHandler(solverAStar, fileCache);
-
-    s->open(atoi(argv[1]), c4);
-
-    delete fileCache;
-    delete (solver);
-    delete (c1);
+    Main* m = new Main();
+    if (argc < 2) {
+        m->main(12345);
+    } else {
+        m->main(atoi(argv[1]));
+    }
     return 0;
 }

@@ -10,7 +10,10 @@
 #include "Point.h"
 #include "ISearchable.h"
 #include "Matrix.h"
-
+/*
+ * the function reads the problem fom the client an check if we have a file
+ * with the solution. if not, the solver returns the solution and saves it in file
+ */
 void MyClientHandler::handleClient(int client_socket) {
   int counter = 0;
   string allProblemInString = "";
@@ -35,8 +38,10 @@ void MyClientHandler::handleClient(int client_socket) {
         solution = file_cache->getSolution(allProblemInString);
         cout << "from file: " << solution << endl;
       } else {
+          cout << "before create matrix " << endl;
         //create matrix
         ISearchable<Point *> *matrix = new Matrix(allProblemInString);
+          cout << "after create matrix " << endl;
         solution = solver->solve(matrix);
         file_cache->saveSolution(allProblemInString, solution);
       }
