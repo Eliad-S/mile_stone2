@@ -56,11 +56,7 @@ void MySerialServer::start(int sockfd, sockaddr_in address, ClientHandler *c) {
       cerr << "Error accepting clinet" << endl;
     }
     c->handleClient(client_socket);
-    //while the client still sending massage - to "End"
-    close(client_socket);
-    //break;
   }
-  shouldStop = false;
 }
 
 void MySerialServer::stop() {

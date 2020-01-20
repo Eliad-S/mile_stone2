@@ -18,12 +18,14 @@ class MyParallelServer : public Server {
  public:
   MyParallelServer(){
     this->shouldStop = false;
+    this->noMoreClients = true;
   }
   virtual void open(int p, ClientHandler *c);
   void start(int client_socket, sockaddr_in address, ClientHandler *c);
   virtual void stop();
   int listeners;
   bool shouldStop;
+  bool noMoreClients;
 };
 
 #endif //MILE_STONE2_MYPARALLELSERVER_H

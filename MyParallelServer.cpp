@@ -36,21 +36,25 @@ void MyParallelServer::open(int p, ClientHandler *c) {
     if (listeners >= LISTENERS) {
       continue;
     }
-    cout << "enter" << endl;
     fd_set rfds;
     FD_ZERO(&rfds);
     FD_SET(sockfd, &rfds);
     struct timeval tv;
-    tv.tv_sec = (long) 10;
+    tv.tv_sec = (long) 120;
     tv.tv_usec = 0;
-    cout << "wait" << endl;
 
     iResult = select(sockfd + 1, &rfds, (fd_set *) 0, (fd_set *) 0, &tv);
     if (iResult > 0) {
 
       client_socket = accept(sockfd, (struct sockaddr *) &address, (socklen_t *) &address);
+      cout<<"connected"<<endl;
+      noMoreClients = false;
       listeners++;
     } else {
+      if (noMoreClients){
+        stop();
+        break;
+      }
       cout << "didnt connect" << endl;
       continue;
     }
@@ -58,8 +62,8 @@ void MyParallelServer::open(int p, ClientHandler *c) {
       cerr << "Error accepting clinet" << endl;
     }
     ClientHandler *client_handler = c->clone();
-    threads.push_back(thread(&MyParallelServer::start,this, client_socket, address, client_handler));
-//    start(client_socket, address, client_handler);
+//    threads.push_back(thread(&MyParallelServer::start,this, client_socket, address, client_handler));
+    start(client_socket, address, client_handler);
     //while the client still sending massage - to "End"
   }
 }
@@ -68,8 +72,16 @@ void MyParallelServer::start(int client_socket, sockaddr_in address, ClientHandl
   c->handleClient(client_socket);
   //finish handling the problem.
   cout << "finish handling the client" << endl;
-  close(client_socket);
+  for(auto it = threads.begin(); it!=threads.end();it++){
+   if(it->get_id() == this_thread::get_id()){
+     threads.erase(it);
+     break;
+   }
+  }
   this->listeners--;
+  if(listeners == 0){
+    noMoreClients = true;
+  }
 }
 
 void MyParallelServer::stop() {

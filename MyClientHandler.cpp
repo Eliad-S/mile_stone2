@@ -55,6 +55,7 @@ void MyClientHandler::handleClient(int client_socket) {
     cout << "bufferOut : " << solution << endl;
     break;
   }
+  close(client_socket);
 }
 ClientHandler *MyClientHandler::clone() {
   ClientHandler *c = new MyClientHandler(solver->clone(), file_cache);
