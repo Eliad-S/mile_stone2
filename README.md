@@ -44,8 +44,6 @@ the name are decided by a hash function to the problem.
 
 ## Setup and execute
 
-
-    ```
 You can choose Port as desired, but you should keep LocalHost IP if you're running both the program and the client on the same PC.
 
 1. Complie the program code:
