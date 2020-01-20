@@ -5,18 +5,16 @@
 
 #include "RunMatrix.h"
 
-vector<double> RunMatrix::runAlgorithm(ISearchable<Point *> *matrix, Searcher<Point *, string> *search) {
-    vector<double> result;
-    for (int i = 0; i < 10; i++) {
-        search->search(matrix);
-        result.push_back(search->getNumberOfNodesEvaluated());
-    }
+double RunMatrix::runAlgorithm(ISearchable<Point *> *matrix, Searcher<Point *, string> *search) {
+    double result;
+    search->search(matrix);
+    result = search->getNumberOfNodesEvaluated();
     return result;
 }
 
-vector<vector<double >> RunMatrix::runAllAlgorithm(ISearchable<Point *> *matrix,
+vector<double > RunMatrix::runAllAlgorithm(ISearchable<Point *> *matrix,
                                                    vector<Searcher<Point *, string> *> searcher) {
-    vector<vector<double >> result;
+    vector<double > result;
     for (auto s: searcher) {
         result.push_back(runAlgorithm(matrix, s));
     }

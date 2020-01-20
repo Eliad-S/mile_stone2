@@ -88,7 +88,6 @@ void MyParallelServer::stop() {
   this->shouldStop = true;
   for (int i = threads.size() - 1; i >= 0; i++) {
     threads[i].join();
-    threads.pop_back();
   }
 
 }

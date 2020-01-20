@@ -72,11 +72,12 @@ public:
 
     void setMatrix(vector<string> allProblem) {
         int size = allProblem.size();
+        cout << "size: " << size - 2 << endl;
         string line;
         string substr = "";
         int pos = 0;
         int i, j = 0;
-        for (i = 0; i < size - 3; i++) {
+        for (i = 0; i < size - 2; i++) {
             line = allProblem[i];
             vector<State<Point *> *> row;
             while (true) {
@@ -103,9 +104,11 @@ public:
         //get start point
         double x, y;
         split(allProblem[i], &x, &y);
+        cout << "initial state: " << x <<"," << y << endl;
         this->setInitialState(vertexes[x][y]);
         //get goal point
         split(allProblem[i + 1], &x, &y);
+        cout << "goal state: " << x <<"," << y << endl;
         this->setGoalState(vertexes[x][y]);
     }
 

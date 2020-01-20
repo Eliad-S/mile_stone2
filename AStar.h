@@ -85,9 +85,10 @@ public:
     }
 
     double heuristicFunc(ISearchable<T> *searchable, State<T> *state) {
-        double dx = abs(state->getT()->getX() - searchable->getInitialState()->getT()->getX());
-        double dy = abs(state->getT()->getY() - searchable->getInitialState()->getT()->getY());
-        return dx + dy;
+//        double dx = abs(state->getT()->getX() - searchable->getInitialState()->getT()->getX());
+//        double dy = abs(state->getT()->getY() - searchable->getInitialState()->getT()->getY());
+//        return dx + dy;
+        return 0;
     }
 
     /*

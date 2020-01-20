@@ -18,6 +18,8 @@ namespace Boot {
             Searcher<Point *, string> *aStar = new AStar<Point *, string>();
             Solver<ISearchable<Point *> *, string> *solverAStar = new SolverSearch<string, Point *>(aStar);
             ClientHandler *c = new MyClientHandler(solverAStar, fileCache);
+            RunMatrix* r = new RunMatrix();
+            r->returnResults(fileCache);
             s->open(port, c);
             delete (fileCache);
             delete (solverAStar);

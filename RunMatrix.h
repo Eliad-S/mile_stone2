@@ -25,30 +25,30 @@ public:
     /*
      * the function run specific algorithm on specific matrix
      */
-    static vector<double> runAlgorithm(ISearchable<Point*>* matrix, Searcher<Point*,string> * search);
+    static double runAlgorithm(ISearchable<Point*>* matrix, Searcher<Point*,string> * search);
     /*
      * the function run all the algorithms with the given matrix
      */
-    static vector<vector<double >> runAllAlgorithm(ISearchable<Point*>* matrix, vector<Searcher<Point*,string> *> searcher);
+    static vector<double > runAllAlgorithm(ISearchable<Point*>* matrix, vector<Searcher<Point*,string> *> searcher);
     /*
      * the function read matrix from file
      */
     static string readFromFile(string file);
-    static map<string, vector<vector<double >>> returnResults(CacheManager<string, string>* fileCache) {
+    static void returnResults(CacheManager<string, string>* fileCache) {
         MySerialServer* s = new MySerialServer();
         Solver<string,string>* solver = new StringReverser();
 
         // read matrix
-        string m1 = readFromFile("matrix1.txt");
-        string m2 = readFromFile("matrix2.txt");
-        string m3 = readFromFile("matrix3.txt");
-        string m4 = readFromFile("matrix4.txt");
-        string m5 = readFromFile("matrix5.txt");
-        string m6 = readFromFile("matrix6.txt");
-        string m7 = readFromFile("matrix7.txt");
-        string m8 = readFromFile("matrix8.txt");
-        string m9 = readFromFile("matrix9.txt");
-        string m10 = readFromFile("matrix10.txt");
+        string m1 = readFromFile("Matrix1.txt");
+        string m2 = readFromFile("Matrix2.txt");
+        string m3 = readFromFile("Matrix3.txt");
+        string m4 = readFromFile("Matrix4.txt");
+        string m5 = readFromFile("Matrix5.txt");
+        string m6 = readFromFile("Matrix6.txt");
+        string m7 = readFromFile("Matrix7.txt");
+        string m8 = readFromFile("Matrix8.txt");
+        string m9 = readFromFile("Matrix9.txt");
+        string m10 = readFromFile("Matrix10.txt");
 
         // create matrix
         ISearchable<Point*>* matrix1 = new Matrix(m1);
@@ -78,32 +78,32 @@ public:
 
 
         // results
-        vector<vector<double >> result1 = runAllAlgorithm(matrix1,searchers);
-        vector<vector<double >> result2 = runAllAlgorithm(matrix2,searchers);
-        vector<vector<double >> result3 = runAllAlgorithm(matrix3,searchers);
-        vector<vector<double >> result4 = runAllAlgorithm(matrix4,searchers);
-        vector<vector<double >> result5 = runAllAlgorithm(matrix5,searchers);
-        vector<vector<double >> result6 = runAllAlgorithm(matrix6,searchers);
-        vector<vector<double >> result7 = runAllAlgorithm(matrix7,searchers);
-        vector<vector<double >> result8 = runAllAlgorithm(matrix8,searchers);
-        vector<vector<double >> result9 = runAllAlgorithm(matrix9,searchers);
-        vector<vector<double >> result10 = runAllAlgorithm(matrix10,searchers);
+        vector<double > result1 = runAllAlgorithm(matrix1,searchers);
+        vector<double > result2 = runAllAlgorithm(matrix2,searchers);
+        vector<double > result3 = runAllAlgorithm(matrix3,searchers);
+        vector<double > result4 = runAllAlgorithm(matrix4,searchers);
+        vector<double > result5 = runAllAlgorithm(matrix5,searchers);
+        vector<double > result6 = runAllAlgorithm(matrix6,searchers);
+        vector<double > result7 = runAllAlgorithm(matrix7,searchers);
+        vector<double > result8 = runAllAlgorithm(matrix8,searchers);
+        vector<double > result9 = runAllAlgorithm(matrix9,searchers);
+        vector<double > result10 = runAllAlgorithm(matrix10,searchers);
 
         // map of results
-        map<string, vector<vector<double >>> map;
-        map["matrix1"] = result1;
-        map["matrix2"] = result2;
-        map["matrix3"] = result3;
-        map["matrix4"] = result4;
-        map["matrix5"] = result5;
-        map["matrix6"] = result6;
-        map["matrix7"] = result7;
-        map["matrix8"] = result8;
-        map["matrix9"] = result9;
-        map["matrix10"] = result10;
+       map<string, vector<vector<double >>> map;
+//        map["matrix1"] = result1;
+//        map["matrix2"] = result2;
+//        map["matrix3"] = result3;
+//        map["matrix4"] = result4;
+//        map["matrix5"] = result5;
+//        map["matrix6"] = result6;
+//        map["matrix7"] = result7;
+//        map["matrix8"] = result8;
+//        map["matrix9"] = result9;
+//        map["matrix10"] = result10;
 
         // return all results
-        return map;
+        //return map;
     }
 };
 
