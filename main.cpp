@@ -8,6 +8,5 @@ int main(int argc, char* argv[]) {
     } else {
         m->main(atoi(argv[1]));
     }
-  cout << "main" << endl;
     return 0;
 }

@@ -83,11 +83,9 @@ void MyParallelServer::start(int client_socket, ClientHandler *c) {
 
 void MyParallelServer::stop() {
   this->shouldStop = true;
-  cout << "before join" << endl;
   for (thread & th: threads) {
     if(th.joinable()){
       th.join();
-      cout << " join "<< endl;
 
     }
   }
