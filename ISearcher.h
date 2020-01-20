@@ -13,6 +13,7 @@ class ISearcher {
  public:
   virtual SOLUTION search(ISearchable<T>* searchable) = 0;
   virtual ISearcher* clone() = 0;
+  virtual ~ISearcher(){}
 
 };
 

@@ -62,12 +62,13 @@ void MyParallelServer::open(int p, ClientHandler *c) {
       cerr << "Error accepting clinet" << endl;
     }
     ClientHandler *client_handler = c->clone();
-    threads.push_back(thread(&MyParallelServer::start,this, client_socket, address, client_handler));
+    threads.push_back(thread(&MyParallelServer::start,this, client_socket, client_handler));
     //start(client_socket, address, client_handler);
     //while the client still sending massage - to "End"
   }
+  close(sockfd);
 }
-void MyParallelServer::start(int client_socket, sockaddr_in address, ClientHandler *c) {
+void MyParallelServer::start(int client_socket, ClientHandler *c) {
 
   c->handleClient(client_socket);
   //finish handling the problem.

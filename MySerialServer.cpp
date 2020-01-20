@@ -31,9 +31,7 @@ void MySerialServer::open(int p, ClientHandler *c) {
 
 }
 void MySerialServer::start(int sockfd, sockaddr_in address, ClientHandler *c) {
-  cout<<"enter"<<endl;
-  int iResult, client_socket, valRead;
-  char bufferIn[1500] = {0};
+  int iResult, client_socket;
   string bufferOut;
   while (!shouldStop) {
     fd_set rfds;

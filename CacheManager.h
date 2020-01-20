@@ -11,5 +11,6 @@ class CacheManager {
   virtual S getSolution(P problem) = 0;
   virtual void saveSolution(P problem, S& solution) = 0;
   virtual bool isSolved(P problem) = 0;
+  virtual ~CacheManager(){}
 };
 #endif //MILE_STONE2__CACHEMANAGER_H_

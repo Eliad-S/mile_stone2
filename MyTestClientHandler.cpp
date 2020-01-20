@@ -16,7 +16,7 @@ void MyTestClientHandler::handleClient(int client_socket) {
         string problem = string(buffer);
         problem = problem.substr(0, valRead);
         // we have all the problem
-        if (problem.compare("End") == 0) {
+        if (problem.compare("end") == 0) {
             close(client_socket);
             break;
         }

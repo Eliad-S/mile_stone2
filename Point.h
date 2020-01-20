@@ -22,6 +22,7 @@ class Point {
   bool operator==(Point &p) {
       return (this->x == p.getX() && this->y == p.getY());
   }
+  ~Point(){}
 };
 
 #endif //MILE_STONE2__POINT_H_

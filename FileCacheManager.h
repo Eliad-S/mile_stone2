@@ -14,7 +14,6 @@ class FileCacheManager : public CacheManager<string, string> {
     // <problem, solution>
     unordered_map<string, string> map;
     hash<string> hasher;
-    mutex mutex_;
 
 public:
 

@@ -19,7 +19,6 @@ public:
         searchable->nullify();
         used.clear();
         this->evaluatedNodes = 0;
-        bool flag = false;
         State<T> *initialState = searchable->getInitialState();
         initialState->setTrailCost(0);
         used.insert(initialState);
@@ -40,15 +39,13 @@ public:
                 }
                 // arrive to goal state
                 if (v == searchable->getGoalState()) {
-                    flag = true;
+                  return this->printAll(searchable->getGoalState(), searchable);
                 }
             }
         }
         clearQueue();
-        if (!flag) {
             return "no solution";
-        }
-        return this->printAll(searchable->getGoalState(), searchable);
+
     }
 
     /*

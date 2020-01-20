@@ -13,7 +13,7 @@ class CompareFScore {
     bool operator()(State<T> *s1, State<T> *s2) {
       return (s1->getFScore() > s2->getFScore());
     }
-
+    ~CompareFScore(){}
 };
 
 #endif //MILE_STONE2__COMPAREFSCORE_H_

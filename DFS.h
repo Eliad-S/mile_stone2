@@ -13,12 +13,14 @@ class DFS : public Searcher<T, SOLUTION> {
     int time = 0;
     set<State<T> *> used;
     bool flag = false;
+    int count = 0;
 public:
     // Searcher's abstract method overriding
     SOLUTION search(ISearchable<T> *searchable) {
         searchable->nullify();
         used.clear();
         this->evaluatedNodes = 0;
+        count = 0;
         time = 0;
         State<T> *initialState = searchable->getInitialState();
         dfsVisit(initialState, searchable);
@@ -29,11 +31,12 @@ public:
         flag = false;
         updateSolutionWithCost(searchable->getGoalState());
         // return the solution
-        return this->printAll(searchable->getGoalState(), searchable);
+
+      return this->printAll(searchable->getGoalState(), searchable);
     }
 
     void dfsVisit(State<T> *u, ISearchable<T> *searchable) {
-        this->evaluatedNodes++;
+
         used.insert(u);
         u->setTrailCost(time);
         time++;
@@ -43,13 +46,16 @@ public:
             if (v->getCost() < 0) {
                 continue;
             }
-            if (u == searchable->getGoalState()) {
+            if (u == searchable->getGoalState() &&!flag) {
                 flag = true;
+              this->evaluatedNodes = count;
                 return;
             }
             if (used.find(v) == used.end()) {
+              count++;
+              v->setCameFrom(u);
                 dfsVisit(v, searchable);
-                v->setCameFrom(u);
+
             }
         }
         time++;
@@ -57,11 +63,13 @@ public:
 
     double updateSolutionWithCost(State<T>* s) {
         if (s->getCameFrom() == nullptr) {
-            s->setTrailCost(s->getCost());
+           s->setTrailCost(s->getCost());
+          return s->getTrialCost();
         } else {
             double cost = s->getCost() + updateSolutionWithCost(s->getCameFrom());
             s->setTrailCost(cost);
         }
+      return 0;
     }
 
     ISearcher<T, SOLUTION> *clone() {
@@ -70,3 +78,5 @@ public:
 };
 
 #endif //MILE_STONE2_DFS_H
+
+

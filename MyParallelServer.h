@@ -11,6 +11,7 @@
 #include <sys/socket.h>
 #include <unistd.h>
 #include <thread>
+#include <vector>
 #define LISTENERS 10
 using namespace server_side;
 class MyParallelServer : public Server {
@@ -21,7 +22,7 @@ class MyParallelServer : public Server {
     this->noMoreClients = true;
   }
   virtual void open(int p, ClientHandler *c);
-  void start(int client_socket, sockaddr_in address, ClientHandler *c);
+  void start(int client_socket, ClientHandler *c);
   virtual void stop();
   int listeners;
   bool shouldStop;

@@ -9,6 +9,10 @@
 #include "StringReverser.h"
 #include "FileCacheManager.h"
 #include "MyTestClientHandler.h"
+#include "MyParallelServer.h"
+#include "RunMatrix.h"
+#include "MyClientHandler.h"
+#include "SolverSearch.h"
 namespace Boot {
     class Main {
     public:
@@ -19,12 +23,14 @@ namespace Boot {
             Solver<ISearchable<Point *> *, string> *solverAStar = new SolverSearch<string, Point *>(aStar);
             ClientHandler *c = new MyClientHandler(solverAStar, fileCache);
             RunMatrix* r = new RunMatrix();
-            r->returnResults(fileCache);
+            r->returnResults();
             s->open(port, c);
+            delete (s);
             delete (fileCache);
             delete (solverAStar);
             delete (c);
             delete (aStar);
+            delete(r);
 
         }
     };

@@ -35,7 +35,7 @@ public:
             // we arrive to the goal state
             if (n == searchable->getGoalState()) {
                 // return the solution
-                return this->printAll(n, searchable);
+              return this->printAll(n, searchable);
             }
             vector<State<T> *> successors = searchable->getAllPossibleState(n);
             // for all the neighbors of q:

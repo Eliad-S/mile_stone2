@@ -33,7 +33,7 @@ public:
             // we arrive to the goal state
             if (q == searchable->getGoalState()) {
                 // return the solution
-                return this->printAll(q, searchable);
+              return this->printAll(q, searchable);
             }
             closed.insert(q);
             vector<State<T> *> successors = searchable->getAllPossibleState(q);
@@ -85,10 +85,9 @@ public:
     }
 
     double heuristicFunc(ISearchable<T> *searchable, State<T> *state) {
-//        double dx = abs(state->getT()->getX() - searchable->getInitialState()->getT()->getX());
-//        double dy = abs(state->getT()->getY() - searchable->getInitialState()->getT()->getY());
-//        return dx + dy;
-        return 0;
+        double dx = abs(state->getT()->getX() - searchable->getInitialState()->getT()->getX());
+        double dy = abs(state->getT()->getY() - searchable->getInitialState()->getT()->getY());
+        return dx + dy;
     }
 
     /*
@@ -149,7 +148,7 @@ public:
     }
 
     ISearcher<T, SOLUTION> *clone() {
-        return new AStar();
+      return new AStar();
     }
 };
 

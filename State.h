@@ -76,6 +76,7 @@ public:
     T getT() {
         return this->state;
     }
+    ~State(){}
 };
 
 #endif //MILE_STONE2_STATE_H

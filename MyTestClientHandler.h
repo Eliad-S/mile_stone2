@@ -25,7 +25,9 @@ public:
         this->file_cache = cache;
     }
 
-    ClientHandler *clone() {}
+    ClientHandler *clone() {
+      return new MyTestClientHandler(solver->clone(), file_cache);
+    }
 };
 
 #endif //MILE_STONE2__MYTESTCLIENTHANDLER_H_
