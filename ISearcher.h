@@ -6,7 +6,7 @@
 #define MILE_STONE2_ISEARCHER_H
 
 #include "ISearchable.h"
-// T - the type of the representation of the state of the Isearchable
+// T - the type of the representation of the state
 template <class T, class SOLUTION>
 class ISearcher {
     virtual int getNumberOfNodesEvaluated() = 0;

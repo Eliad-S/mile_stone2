@@ -9,7 +9,7 @@
 template <class T>
 class CompareFScore {
    public:
-    // compare two states according to the trial cost
+    // compare two states according to the fScore
     bool operator()(State<T> *s1, State<T> *s2) {
       return (s1->getFScore() > s2->getFScore());
     }

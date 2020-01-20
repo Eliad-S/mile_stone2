@@ -9,23 +9,22 @@
 #include "Solver.h"
 #include "Searcher.h"
 
-//can adding another tamplate to make the point genery .
-template<typename P, typename S, typename T>
-class SolverSearch : public Solver<P, S> {
-    ISearcher<T, S> *searcher;
+// T - the type of the representation of the states
+template<typename SOLUTION, typename T>
+class SolverSearch : public Solver<ISearchable<T>*, SOLUTION> {
+    ISearcher<T, SOLUTION> *searcher;
 public:
     // constructor
-    SolverSearch(ISearcher<T, S> *s) {
+    SolverSearch(ISearcher<T, SOLUTION> *s) {
         this->searcher = s;
     }
     /*
      * solve the problem by the search algorithm
      */
-    virtual S solve(P problem) {
-      cout << this->searcher->search(problem)<<endl;
+    virtual SOLUTION solve(ISearchable<T>* problem) {
         return this->searcher->search(problem);
     }
-    Solver<P,S>* clone(){
+    Solver<ISearchable<T>*,SOLUTION>* clone(){
       return new SolverSearch(searcher->clone());
     }
 };

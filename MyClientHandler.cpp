@@ -31,7 +31,6 @@ void MyClientHandler::handleClient(int client_socket) {
 
     if (allProblemInString.find("end") < allProblemInString.size()) {
       cout << "endddd" << endl;
-      //allProblem = splitLines(allProblemInString);
       if (file_cache->isSolved(allProblemInString)) {
         solution = file_cache->getSolution(allProblemInString);
         cout << "from file: " << solution << endl;
