@@ -21,7 +21,7 @@ by implement new Searchable class and relevents Searcher class
 
 ## Collaborators
 
-This program was developed by https://github.com/Eliadsellem and https://github.com/shirgoldberger, CS students from Bar-Ilan university, Israel.
+This program was developed by [Eliadsellem](https://github.com/Eliadsellem) and [shirgoldberger](https://github.com/shirgoldberger), CS students from Bar-Ilan university, Israel.
 
 
 ## Features
