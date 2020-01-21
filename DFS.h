@@ -23,13 +23,13 @@ public:
         count = 0;
         time = 0;
         State<T> *initialState = searchable->getInitialState();
+        initialState->setTrailCost(initialState->getCost());
         dfsVisit(initialState, searchable);
         if (!flag) {
             return "no solution";
         }
         // for the next running
         flag = false;
-        updateSolutionWithCost(searchable->getGoalState());
         // return the solution
 
       return this->printAll(searchable->getGoalState(), searchable);
@@ -38,8 +38,6 @@ public:
     void dfsVisit(State<T> *u, ISearchable<T> *searchable) {
 
         used.insert(u);
-        u->setTrailCost(time);
-        time++;
         vector<State<T> *> adj = searchable->getAllPossibleState(u);
         // for all the neighbors of u:
         for (State<T> *v : adj) {
@@ -54,22 +52,11 @@ public:
             if (used.find(v) == used.end()) {
               count++;
               v->setCameFrom(u);
+              v->setTrailCost(u->getTrialCost() + v->getCost());
                 dfsVisit(v, searchable);
 
             }
         }
-        time++;
-    }
-
-    double updateSolutionWithCost(State<T>* s) {
-        if (s->getCameFrom() == nullptr) {
-           s->setTrailCost(s->getCost());
-          return s->getTrialCost();
-        } else {
-            double cost = s->getCost() + updateSolutionWithCost(s->getCameFrom());
-            s->setTrailCost(cost);
-        }
-      return 0;
     }
 
     ISearcher<T, SOLUTION> *clone() {

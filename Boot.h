@@ -19,17 +19,17 @@ namespace Boot {
         void main(int port) {
             MyParallelServer *s = new MyParallelServer();
             CacheManager<string,string>* fileCache = new FileCacheManager();
-            Searcher<Point *, string> *aStar = new AStar<Point *, string>();
-            Solver<ISearchable<Point *> *, string> *solverAStar = new SolverSearch<string, Point *>(aStar);
-            ClientHandler *c = new MyClientHandler(solverAStar, fileCache);
+            Searcher<Point *, string> *dfs = new DFS<Point *, string>();
+            Solver<ISearchable<Point *> *, string> *solverDfs = new SolverSearch<string, Point *>(dfs);
+            ClientHandler *c = new MyClientHandler(solverDfs, fileCache);
             RunMatrix* r = new RunMatrix();
             r->returnResults();
             s->open(port, c);
             delete (s);
             delete (fileCache);
-            delete (solverAStar);
+            delete (solverDfs);
             delete (c);
-            delete (aStar);
+            delete (dfs);
             delete(r);
 
         }
