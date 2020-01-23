@@ -4,7 +4,7 @@ using namespace Boot;
 int main(int argc, char* argv[]) {
     Main* m = new Main();
     if (argc < 2) {
-        m->main(12345);
+        m->main(5600);
     } else {
         m->main(atoi(argv[1]));
     }

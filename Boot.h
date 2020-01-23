@@ -19,18 +19,18 @@ namespace Boot {
         void main(int port) {
             MyParallelServer *s = new MyParallelServer();
             CacheManager<string,string>* fileCache = new FileCacheManager();
-            Searcher<Point *, string> *dfs = new DFS<Point *, string>();
-            Solver<ISearchable<Point *> *, string> *solverDfs = new SolverSearch<string, Point *>(dfs);
+            Searcher<Point *, string> *bestFS = new BestFirstSearch<Point *, string>();
+            Solver<ISearchable<Point *> *, string> *solverDfs = new SolverSearch<string, Point *>(bestFS);
             ClientHandler *c = new MyClientHandler(solverDfs, fileCache);
-            RunMatrix* r = new RunMatrix();
-            r->returnResults();
+//            RunMatrix* r = new RunMatrix();
+//            r->returnResults();
             s->open(port, c);
             delete (s);
             delete (fileCache);
             delete (solverDfs);
             delete (c);
-            delete (dfs);
-            delete(r);
+            delete (bestFS);
+//            delete(r);
 
         }
     };

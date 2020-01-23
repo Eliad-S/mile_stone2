@@ -40,7 +40,7 @@ void MyParallelServer::open(int p, ClientHandler *c) {
     FD_ZERO(&rfds);
     FD_SET(sockfd, &rfds);
     struct timeval tv;
-    tv.tv_sec = (long) 30;
+    tv.tv_sec = (long) 120;
     tv.tv_usec = 0;
 
     iResult = select(sockfd + 1, &rfds, (fd_set *) 0, (fd_set *) 0, &tv);
