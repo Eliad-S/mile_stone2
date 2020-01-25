@@ -16,11 +16,12 @@ class BFS : public Searcher<T, SOLUTION> {
 public:
     // Searcher's abstract method overriding
     SOLUTION search(ISearchable<T> *searchable) {
+        cout << "bfs: " << endl;
         searchable->nullify();
         used.clear();
         this->evaluatedNodes = 0;
         State<T> *initialState = searchable->getInitialState();
-        initialState->setTrailCost(0);
+        initialState->setTrailCost(initialState->getCost());
         used.insert(initialState);
         addToQueue(initialState);
         while (!myQueue.empty()) {
@@ -33,13 +34,15 @@ public:
                 // we don't arrive to this state before
                 if (used.find(v) == used.end()) {
                     used.insert(v);
-                    v->setTrailCost(u->getTrialCost() + 1);
+                    v->setTrailCost(u->getTrialCost() + v->getCost());
                     v->setCameFrom(u);
                     addToQueue(v);
                 }
                 // arrive to goal state
                 if (v == searchable->getGoalState()) {
-                  return this->printAll(searchable->getGoalState(), searchable);
+                    string s = this->printAll(searchable->getGoalState(), searchable);
+                    cout << s << endl;
+                  return s;
                 }
             }
         }
