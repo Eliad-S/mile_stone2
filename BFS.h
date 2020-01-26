@@ -16,7 +16,6 @@ class BFS : public Searcher<T, SOLUTION> {
 public:
     // Searcher's abstract method overriding
     SOLUTION search(ISearchable<T> *searchable) {
-        cout << "bfs: " << endl;
         searchable->nullify();
         used.clear();
         this->evaluatedNodes = 0;
@@ -41,7 +40,6 @@ public:
                 // arrive to goal state
                 if (v == searchable->getGoalState()) {
                     string s = this->printAll(searchable->getGoalState(), searchable);
-                    cout << s << endl;
                   return s;
                 }
             }

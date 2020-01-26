@@ -14,13 +14,16 @@ class FileCacheManager : public CacheManager<string, string> {
     // <problem, solution>
     unordered_map<string, string> map;
     hash<string> hasher;
+    mutex m1;
+    mutex m2;
+    mutex m3;
 
 public:
 
     virtual bool isSolved(string problem) {
-        //mutex_.lock();
+        m1.lock();
         if (exist(problem)) {
-            //mutex_.unlock();
+            m1.unlock();
 
             return true;
         }
@@ -28,21 +31,21 @@ public:
     }
 
     virtual string getSolution(string problem) {
-        //mutex_.lock();
+        m2.lock();
         // if the key doesn't exist
         if (!exist(problem)) {
             throw "Error: The key doesn't existing";
         }
         // read object from file
         string solution = this->readObj(problem);
-        //mutex_.unlock();
+        m2.unlock();
 
         return solution;
     }
 
     virtual void saveSolution(string problem, string &solution) {
         // will always be string
-        //mutex_.lock();
+        m3.lock();
         size_t hash = hasher(problem);
         ofstream outFile(to_string(hash));
         if (!outFile) {
@@ -51,7 +54,7 @@ public:
         outFile << solution;
         outFile.close();
         map[problem] = hash;
-        //mutex_.unlock();
+        m3.unlock();
     }
 
     string readObj(string problem) {
